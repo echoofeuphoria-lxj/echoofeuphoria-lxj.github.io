@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFF5F9"/>
+      <stop offset="1" stop-color="#FFEAF1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="224" fill="url(#bg)"/>
+  <circle cx="512" cy="512" r="382" fill="none" stroke="#F0A8BC" stroke-width="40" opacity="0.22"/>
+  <circle cx="512" cy="512" r="382" fill="none" stroke="#F0A8BC" stroke-width="12" stroke-dasharray="1200 1200" opacity="0.5" transform="rotate(-40 512 512)"/>
+  <!-- 字母 nom：缩小字号 + 去掉负字距，保证最后一个 m 完整不被裁切 -->
+  <text x="512" y="614" text-anchor="middle" font-family="'Arial Rounded MT Bold', 'Avenir Next', 'Arial Black', Arial, sans-serif" font-size="270" font-weight="800" fill="#E87A98" stroke="#FFFFFF" stroke-width="14" paint-order="stroke" letter-spacing="2">nom</text>
+  <path d="M806 300c-14-22-40-30-62-18-16 9-24 27-20 45 3 14 13 25 25 31l57 34-57 34c-12 6-22 17-25 31-4 18 4 36 20 45 22 12 48 4 62-18l6-12c8-16 8-34 0-50l-6-12z" fill="#FFFFFF" opacity="0.9"/>
+</svg>

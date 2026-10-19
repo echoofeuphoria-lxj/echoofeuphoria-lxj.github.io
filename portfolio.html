@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>能力作品集 | 李鑫婕 · 27 届</title>
+<meta name="description" content="李鑫婕能力作品集：运营 · 数据 · 文案 · 设计 · AI · 产品六块能力，都在真实项目里跑过——认养一头牛会员运营、1000+ 样本调研、AI 生图做活动主视觉、独立做出三个 App。" />
+<meta name="theme-color" content="#FFF5F9" />
+<link rel="icon" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* ============================================================
+     能力作品集 · 页面样式（沿用站点手帐风，加深层次）
+     色阶：每个能力块一套 --ac（主）/ --acs（浅底）/ --acd（深字）
+     ============================================================ */
+  .pf-hero { padding: 132px 0 54px; text-align: center; position: relative; overflow: hidden; }
+  .pf-hero .hero-wm { position: absolute; left: 50%; top: 96px; transform: translateX(-50%) rotate(-2deg);
+    font-family: var(--font-se); font-style: italic; font-weight: 700;
+    font-size: clamp(110px, 15vw, 196px); line-height: 1; letter-spacing: .03em;
+    color: rgba(52, 45, 38, 0.045); white-space: nowrap;
+    pointer-events: none; user-select: none; z-index: 0; }
+  .pf-hero .glow { position: absolute; border-radius: 50%; filter: blur(70px); pointer-events: none; }
+  .pf-hero .glow.g1 { width: 380px; height: 380px; background: rgba(232,148,173,.15); top: -60px; left: -90px; }
+  .pf-hero .glow.g2 { width: 320px; height: 320px; background: rgba(143,194,228,.13); top: 40px; right: -70px; }
+  .pf-hero .glow.g3 { width: 260px; height: 260px; background: rgba(185,166,220,.11); bottom: -120px; left: 42%; }
+  .pf-hero .container { position: relative; z-index: 1; }
+  .pf-hero h1 { font-size: clamp(32px, 5.6vw, 56px); font-weight: 900; letter-spacing: 2px; margin: 20px 0 10px; line-height: 1.26; }
+  .pf-hero h1 .hl { color: var(--pink-deep); position: relative; }
+  .pf-hero h1 .hl::after { content: ""; position: absolute; left: -2px; right: -2px; bottom: 4px; height: 14px;
+    background: rgba(143,194,228,.3); border-radius: 7px; z-index: -1; }
+  .pf-hero .en { letter-spacing: .35em; color: var(--text-2); font-size: 12.5px; font-weight: 700; }
+  .pf-hero .intro { max-width: 700px; margin: 22px auto 0; color: var(--text-2); font-size: 16px; }
+  .float-emoji { position: absolute; font-size: 26px; opacity: .55; pointer-events: none; animation: floaty 7s ease-in-out infinite; }
+  .float-emoji.f1 { top: 150px; left: 8%; }
+  .float-emoji.f2 { top: 240px; right: 9%; animation-delay: 1.4s; }
+  .float-emoji.f3 { top: 380px; left: 14%; animation-delay: 2.6s; font-size: 22px; }
+  .float-emoji.f4 { top: 420px; right: 15%; animation-delay: .8s; font-size: 22px; }
+  @keyframes floaty { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-14px) rotate(5deg); } }
+  @media (max-width: 900px) { .float-emoji { display: none; } }
+
+  /* 彩色统计卡 · v4 便利贴化：交错倾斜 + 底下露出的卡纸边 */
+  .pf-stats { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 36px; }
+  .pf-stat { position: relative; background: var(--card); border-radius: 20px; padding: 17px 26px 15px;
+    box-shadow: var(--paper-lift), var(--paper-edge), 0 14px 30px rgba(52,45,38,.11);
+    text-align: center; overflow: hidden; min-width: 118px;
+    transition: transform .22s ease, box-shadow .22s ease; }
+  .pf-stat::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 5px; background: var(--sc, var(--pink)); }
+  .pf-stat::before { content: ""; position: absolute; top: -9px; left: 50%; transform: translateX(-50%) rotate(-2deg);
+    width: 54px; height: 15px; background: var(--sc, var(--pink)); opacity: .38; border-radius: 2px;
+    clip-path: polygon(4% 0, 100% 0, 96% 100%, 0 100%); z-index: 2; }
+  .pf-stat:nth-child(odd)  { transform: rotate(-1.4deg); }
+  .pf-stat:nth-child(even) { transform: rotate(1.2deg) translateY(3px); }
+  .pf-stat:nth-child(3n)   { transform: rotate(0.6deg); }
+  .pf-stat:hover { transform: translateY(-6px) rotate(0deg); box-shadow: var(--paper-lift), var(--paper-edge), 0 20px 40px rgba(52,45,38,.16); }
+  .pf-stat b { display: block; font-size: 27px; font-weight: 900; color: var(--scd, var(--pink-deep)); line-height: 1.2; }
+  .pf-stat span { font-size: 12.5px; color: var(--text-2); font-weight: 600; }
+
+  /* ---------- 能力雷达 ---------- */
+  .radar-card { background: var(--card); border-radius: var(--radius-lg); padding: 38px 40px;
+    box-shadow: var(--paper-lift), var(--paper-edge), var(--shadow);
+    display: grid; grid-template-columns: 340px 1fr; gap: 40px; align-items: center; position: relative; overflow: hidden; }
+  .radar-card::before { content: ""; position: absolute; top: 8px; left: 50px; width: 108px; height: 24px;
+    background: rgba(232,148,173,.4); transform: rotate(-3deg); border-radius: 3px; }
+  @media (max-width: 860px) { .radar-card { grid-template-columns: 1fr; gap: 24px; padding: 30px 24px; } }
+  .radar-svg { width: 100%; max-width: 340px; margin: 0 auto; display: block; }
+  .radar-side h3 { font-size: 22px; font-weight: 900; margin-bottom: 6px; }
+  .radar-side .sub { font-size: 13.5px; color: var(--text-2); margin-bottom: 22px; }
+  .bar-row { display: grid; grid-template-columns: 46px 1fr 34px; align-items: center; gap: 12px; margin-bottom: 11px; }
+  .bar-name { font-size: 13.5px; font-weight: 800; color: var(--text); }
+  .bar-track { height: 11px; background: var(--bg-deep); border-radius: 999px; overflow: hidden; }
+  .bar-track i { display: block; height: 100%; border-radius: 999px; background: var(--bc, var(--pink)); }
+  .bar-val { font-size: 13px; font-weight: 900; color: var(--text-2); text-align: right; }
+
+  /* ---------- 能力地图 ---------- */
+  .map-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 900px) { .map-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .map-grid { grid-template-columns: 1fr; } }
+  .map-card { display: block; background: var(--card); border-radius: 24px; padding: 26px 24px 20px;
+    box-shadow: var(--paper-lift), var(--paper-edge), 0 14px 30px rgba(52,45,38,.10);
+    position: relative; overflow: hidden; transition: transform .22s ease, box-shadow .22s ease; }
+  .map-card::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px; background: var(--ac); }
+  /* v4 拼贴：交错倾斜 + 纵向错落，hover 归位抬升 */
+  .map-card:nth-child(3n+1) { transform: rotate(-0.6deg) translateY(0); }
+  .map-card:nth-child(3n+2) { transform: rotate(0.5deg) translateY(7px); }
+  .map-card:nth-child(3n)   { transform: rotate(-0.3deg) translateY(3px); }
+  .map-card:hover { transform: translateY(-6px) rotate(0deg); box-shadow: var(--paper-lift), var(--paper-edge), 0 22px 46px rgba(52,45,38,.16); }
+  .map-wm { position: absolute; right: 12px; bottom: -12px; font-size: 80px; font-weight: 900; line-height: 1;
+    letter-spacing: -3px; pointer-events: none;
+    color: transparent; -webkit-text-stroke: 2px var(--acs); }
+  .map-ico { width: 52px; height: 52px; border-radius: 16px; background: var(--acs);
+    display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 14px; position: relative; z-index: 1; }
+  .map-card h3 { font-size: 19px; font-weight: 900; letter-spacing: .5px; position: relative; z-index: 1; }
+  .map-card h3 i { font-style: normal; font-size: 11.5px; color: var(--acd); font-weight: 800; margin-left: 6px; letter-spacing: .08em; }
+  .map-card p { font-size: 13.5px; color: var(--text-2); margin-top: 6px; min-height: 42px; position: relative; z-index: 1; }
+  .map-hint { margin-top: 14px; padding-top: 12px; border-top: 1.5px dashed rgba(232,148,173,.35);
+    font-size: 12.5px; font-weight: 800; color: var(--acd); display: flex; justify-content: space-between; position: relative; z-index: 1; }
+  .map-hint span:last-child { color: var(--text-3); font-weight: 700; }
+
+  /* ---------- 能力块 ---------- */
+  .cap { background: var(--card); border-radius: var(--radius-lg); padding: 40px 42px 34px;
+    box-shadow: var(--paper-lift), var(--paper-edge), var(--shadow);
+    position: relative; overflow: hidden; margin-top: 30px;
+    border: 1px solid var(--line); }
+  /* v4 底色节奏：偶数块整张换成暖奶油纸，大层次不靠颜色靠纸色 */
+  .cap:nth-of-type(even) { background: #fdfaf2; }
+  .cap::before { content: ""; position: absolute; top: 10px; left: 48px; width: 108px; height: 24px;
+    background: var(--acs); transform: rotate(-3deg); border-radius: 3px; opacity: .85; }
+  .cap::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 7px; background: var(--ac); }
+  @media (max-width: 620px) { .cap { padding: 30px 22px 26px; } }
+  .cap-wm { position: absolute; right: 30px; top: 10px; font-size: 130px; font-weight: 900; line-height: 1;
+    pointer-events: none; letter-spacing: -6px;
+    color: transparent; -webkit-text-stroke: 2.5px color-mix(in srgb, var(--ac) 32%, #fff); }
+  .cap-head { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 6px; position: relative; z-index: 1; }
+  .cap-ico { width: 62px; height: 62px; border-radius: 19px; background: var(--acs);
+    display: flex; align-items: center; justify-content: center; font-size: 31px; flex: 0 0 auto; }
+  .cap-head-txt { flex: 1 1 auto; }
+  .cap-num { font-size: 11.5px; font-weight: 900; letter-spacing: .24em; color: var(--acd); }
+  .cap-head h2 { font-size: 28px; font-weight: 900; margin-top: 2px; }
+  .cap-head h2 em { font-style: normal; font-size: 13px; font-weight: 800; color: var(--text-3); margin-left: 8px; letter-spacing: .08em; }
+  .cap-sub { color: var(--text-2); font-size: 15px; margin: 8px 0 18px; padding-left: 78px; position: relative; z-index: 1; }
+  @media (max-width: 620px) { .cap-sub { padding-left: 0; } }
+  .cap-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; position: relative; z-index: 1; }
+  .cap-tags span { font-size: 12.5px; font-weight: 700; color: var(--acd); background: var(--acs);
+    border-radius: 999px; padding: 6px 14px; }
+
+  .cap-grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 28px; align-items: start; position: relative; z-index: 1; }
+  @media (max-width: 820px) { .cap-grid { grid-template-columns: 1fr; } }
+  .evid-row { position: relative; padding: 0 0 0 21px; margin-bottom: 13px; font-size: 14.5px; }
+  .evid-row::before { content: ""; position: absolute; left: 3px; top: 9px; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--ac); box-shadow: 0 0 0 3px var(--acs); }
+  .evid-src { display: inline-block; font-size: 11.5px; font-weight: 800; color: var(--acd);
+    background: var(--acs); border-radius: 6px; padding: 2px 8px; margin-right: 7px; position: relative; top: -1px; }
+  .evid-row b { color: var(--pink-deep); }
+  .cap-nums { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; align-content: start; }
+  .cap-num-cell { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 15px 10px; text-align: center;
+    box-shadow: var(--paper-lift), var(--paper-edge), 0 8px 18px rgba(52,45,38,.07);
+    transition: transform .2s ease; }
+  .cap-num-cell:nth-child(odd)  { transform: rotate(-0.9deg); }
+  .cap-num-cell:nth-child(even) { transform: rotate(0.8deg); }
+  .cap-num-cell:hover { transform: translateY(-3px) rotate(0deg); }
+  .cap-num-cell b { display: block; font-size: 23px; color: var(--acd); line-height: 1.25; }
+  .cap-num-cell span { font-size: 11.5px; color: var(--text-2); font-weight: 600; }
+  .cap-tools { margin-top: 24px; padding-top: 16px; border-top: 1.5px dashed rgba(232,148,173,.4);
+    font-size: 13px; color: var(--text-2); font-weight: 600; position: relative; z-index: 1; }
+  .cap-tools b { color: var(--text); }
+  .cap-tools .tl-chip { display: inline-block; background: var(--bg-deep); border-radius: 999px; padding: 4px 12px;
+    margin: 0 4px 4px 0; font-size: 12.5px; font-weight: 700; color: var(--text); }
+
+  /* ---------- 经历时间线 ---------- */
+  .tl { position: relative; max-width: 880px; margin: 0 auto; padding-left: 34px; }
+  .tl::before { content: ""; position: absolute; left: 9px; top: 8px; bottom: 8px; width: 2.5px;
+    background: linear-gradient(180deg, rgba(232,148,173,.5), rgba(143,194,228,.5), rgba(201,184,232,.45)); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 20px; }
+  .tl-item::before { content: ""; position: absolute; left: -30px; top: 22px; width: 13px; height: 13px; border-radius: 50%;
+    background: #fff; border: 3px solid var(--tc, var(--pink)); box-shadow: 0 0 0 3px rgba(255,255,255,.9); }
+  .tl-card { background: var(--card); border-radius: 20px; padding: 20px 24px;
+    box-shadow: var(--paper-lift), 0 4px 0 -2px var(--bg-deep), 0 14px 30px rgba(52,45,38,.10);
+    border-left: 4px solid var(--tc, var(--pink)); transition: transform .22s ease, box-shadow .22s ease; }
+  .tl-item:nth-of-type(odd) .tl-card  { transform: rotate(-0.5deg); }
+  .tl-item:nth-of-type(even) .tl-card { transform: rotate(0.45deg); }
+  .tl-card:hover { transform: translateX(5px) rotate(0deg); box-shadow: var(--paper-lift), 0 4px 0 -2px var(--bg-deep), 0 20px 40px rgba(52,45,38,.15); }
+  .tl-when { display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: .06em;
+    color: var(--tc, var(--pink-deep)); background: var(--tcs, var(--pink-soft)); border-radius: 999px; padding: 3px 12px; margin-bottom: 9px; }
+  .tl-card h3 { font-size: 18px; font-weight: 900; }
+  .tl-card h3 em { font-style: normal; font-size: 12.5px; font-weight: 700; color: var(--text-2); margin-left: 8px; }
+  .tl-card p { font-size: 13.5px; color: var(--text-2); margin-top: 5px; }
+  .tl-card p b { color: var(--pink-deep); }
+
+  /* ---------- 实习案例详情 ---------- */
+  .case-card { background: var(--card); border-radius: var(--radius-lg); padding: 34px 36px; position: relative; overflow: hidden;
+    box-shadow: var(--paper-lift), var(--paper-edge), var(--shadow); border: 1px solid var(--line); }
+  .case-card + .case-card { margin-top: 24px; }
+  .case-card:nth-of-type(even) { background: #fdfaf2; }
+  .case-card::before { content: ""; position: absolute; top: 9px; left: 42px; width: 110px; height: 24px;
+    background: rgba(143,194,228,.45); transform: rotate(-3deg); border-radius: 3px; }
+  .case-kicker { font-size: 12.5px; letter-spacing: .2em; color: var(--pink-deep); font-weight: 800; }
+  .case-card h3 { font-size: 23px; font-weight: 900; margin: 6px 0 2px; }
+  .case-period { font-size: 13px; color: var(--text-2); font-weight: 600; }
+  .case-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 26px; margin-top: 20px; }
+  @media (max-width: 760px) { .case-grid { grid-template-columns: 1fr; } }
+  .case-block h4 { font-size: 14.5px; font-weight: 900; color: var(--pink-deep); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+  .case-block h4::before { content: "✦"; font-size: 11px; }
+  .case-block ul li { position: relative; padding-left: 18px; font-size: 14.5px; color: var(--text); margin-bottom: 7px; }
+  .case-block ul li::before { content: "·"; position: absolute; left: 4px; color: var(--pink); font-weight: 900; }
+  .case-nums { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; align-content: start; }
+  .case-num { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px 12px; text-align: center;
+    box-shadow: var(--paper-lift), 0 4px 0 -2px var(--pink-soft), 0 8px 18px rgba(52,45,38,.07); }
+  .case-num:nth-child(odd)  { transform: rotate(-0.8deg); }
+  .case-num:nth-child(even) { transform: rotate(0.7deg); }
+  .case-num b { display: block; font-size: 24px; color: var(--pink-deep); }
+  .case-num span { font-size: 12px; color: var(--text-2); font-weight: 600; }
+  .case-skill { margin-top: 18px; padding-top: 14px; border-top: 1.5px dashed rgba(232,148,173,.4);
+    font-size: 13px; color: var(--text-2); font-weight: 600; }
+
+  /* ---------- 方法论 ---------- */
+  .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(198px, 1fr)); gap: 18px; margin-top: 30px; }
+  .method-card { background: var(--card); border-radius: 22px; padding: 26px 24px;
+    box-shadow: var(--paper-lift), 0 4px 0 -2px var(--bg-deep), 0 10px 24px rgba(52,45,38,.09);
+    position: relative; overflow: hidden; transition: transform .22s ease, box-shadow .22s ease; }
+  .method-card:hover { transform: translateY(-5px); box-shadow: var(--paper-lift), 0 4px 0 -2px var(--bg-deep), 0 18px 38px rgba(52,45,38,.15); }
+  .method-card:nth-child(odd) { transform: rotate(-0.7deg); }
+  .method-card:nth-child(even) { transform: rotate(0.6deg); }
+  .method-card:nth-child(odd):hover, .method-card:nth-child(even):hover { transform: translateY(-5px) rotate(0deg); }
+  .method-card::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: var(--mc, var(--pink)); opacity: .8; }
+  .method-card .me { width: 52px; height: 52px; border-radius: 16px; background: var(--mcs, var(--pink-soft));
+    display: flex; align-items: center; justify-content: center; font-size: 26px; }
+  .method-card .mn { position: absolute; right: 18px; top: 16px; font-size: 12px; font-weight: 900; letter-spacing: .2em; color: var(--text-3); }
+  .method-card h3 { font-size: 17px; font-weight: 900; margin: 12px 0 6px; }
+  .method-card p { font-size: 13.5px; color: var(--text-2); }
+
+  .contact-band { margin: 74px auto 108px; max-width: 700px; text-align: center;
+    background: linear-gradient(135deg, #ffe9f1 0%, #f7f1fb 52%, #eef7fd 100%);
+    border-radius: var(--radius-lg); padding: 48px 34px;
+    box-shadow: var(--paper-lift), var(--paper-edge), var(--shadow); position: relative; overflow: hidden;
+    border: 1px solid var(--line); transform: rotate(-0.5deg); }
+  .contact-band::before { content: ""; position: absolute; width: 180px; height: 180px; border-radius: 50%;
+    background: rgba(255,255,255,.55); top: -70px; right: -50px; }
+  .contact-band h2 { font-size: 26px; font-weight: 900; margin-bottom: 8px; position: relative; }
+  .contact-band p { color: var(--text-2); font-size: 14.5px; position: relative; }
+  .back-home { display: inline-flex; align-items: center; gap: 6px; margin: 26px auto 0; font-weight: 800; color: var(--pink-deep); position: relative; }
+  .sec-slim { padding-top: 26px; }
+  .band-note { text-align: center; margin: -30px auto 0; max-width: 620px; font-size: 13px; color: var(--text-3); font-weight: 600; }
+
+  /* ---------- 认养一头牛 · 会员运营实战全记录 ---------- */
+  .zync-band { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 32px 0 48px; }
+  @media (max-width: 780px) { .zync-band { grid-template-columns: repeat(2, 1fr); } }
+  .zync-cell { background: var(--card); border-radius: 20px; padding: 20px 16px;
+    box-shadow: var(--paper-lift), 0 4px 0 -2px var(--bg-deep), 0 10px 22px rgba(52,45,38,.09);
+    text-align: center; position: relative; overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease; }
+  .zync-cell:nth-child(odd)  { transform: rotate(-1deg); }
+  .zync-cell:nth-child(even) { transform: rotate(0.9deg); }
+  .zync-cell:hover { transform: translateY(-4px) rotate(0deg); box-shadow: var(--paper-lift), 0 4px 0 -2px var(--bg-deep), 0 16px 32px rgba(52,45,38,.14); }
+  .zync-cell::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 5px; background: var(--zc, var(--pink)); }
+  .zync-cell b { display: block; font-size: 26px; font-weight: 900; color: var(--zcd, var(--pink-deep)); line-height: 1.2; }
+  .zync-cell span { font-size: 12.5px; color: var(--text-2); font-weight: 600; }
+
+  .sub-block + .sub-block { margin-top: 54px; }
+  .sub-head { margin-bottom: 20px; }
+  .sub-head .sn { display: inline-block; font-size: 11.5px; font-weight: 900; letter-spacing: .22em;
+    color: var(--pink-deep); background: var(--pink-soft); border-radius: 999px; padding: 4px 13px; }
+  .sub-head h3 { font-size: 23px; font-weight: 900; margin: 10px 0 4px; }
+  .sub-head p { font-size: 13.8px; color: var(--text-2); }
+
+  .mod-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  @media (max-width: 1040px) { .mod-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 700px) { .mod-grid { grid-template-columns: repeat(2, 1fr); } }
+  .mod-card { background: var(--card); border-radius: 22px; padding: 22px 20px;
+    box-shadow: var(--paper-lift), 0 4px 0 -2px var(--bg-deep), 0 10px 24px rgba(52,45,38,.09);
+    position: relative; overflow: hidden; transition: transform .22s ease, box-shadow .22s ease;
+    display: flex; flex-direction: column; border: 1px solid var(--line-2); }
+  .mod-card:nth-child(3n+2) { transform: rotate(-0.6deg); }
+  .mod-card:nth-child(3n)   { transform: rotate(0.5deg); }
+  .mod-card:hover { transform: translateY(-5px) rotate(0deg); box-shadow: var(--paper-lift), 0 4px 0 -2px var(--bg-deep), 0 18px 38px rgba(52,45,38,.15); }
+  .mod-card::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 5px; background: var(--mc, var(--pink)); }
+  .mod-ico { width: 46px; height: 46px; border-radius: 14px; background: var(--mcs, var(--pink-soft));
+    display: flex; align-items: center; justify-content: center; font-size: 23px; margin-bottom: 12px; flex: 0 0 auto; }
+  .mod-card h4 { font-size: 15.5px; font-weight: 900; margin-bottom: 9px; }
+  .mod-card ul { flex: 1 1 auto; margin-bottom: 15px; }
+  .mod-card ul li { position: relative; padding-left: 15px; font-size: 12.8px; color: var(--text-2); margin-bottom: 5px; line-height: 1.6; }
+  .mod-card ul li::before { content: "·"; position: absolute; left: 3px; color: var(--mc, var(--pink)); font-weight: 900; }
+  .mod-card ul li b { color: var(--text); }
+  .mod-sops { margin-top: 0; padding-top: 11px; border-top: 1.5px dashed rgba(232,148,173,.35); flex: 0 0 auto; }
+  .mod-sops .ms-t { font-size: 10.5px; font-weight: 900; letter-spacing: .12em; color: var(--text-3); display: block; margin-bottom: 7px; }
+  .mod-sops .c { display: inline-block; font-size: 11.5px; font-weight: 700; background: var(--bg-deep); color: var(--text);
+    border-radius: 999px; padding: 3px 10px; margin: 0 4px 4px 0; line-height: 1.5; }
+
+  .proj { background: var(--card); border-radius: var(--radius-lg); padding: 30px 34px 26px;
+    box-shadow: var(--paper-lift), var(--paper-edge), 0 16px 36px rgba(52,45,38,.11);
+    position: relative; overflow: hidden; border: 1px solid var(--line); }
+  .proj:nth-of-type(even) { background: #fdfaf2; }
+  .proj + .proj { margin-top: 22px; }
+  .proj::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 7px; background: var(--pc, var(--pink)); }
+  .proj-head { display: flex; align-items: flex-start; gap: 16px; }
+  .proj-num { flex: 0 0 auto; width: 48px; height: 48px; border-radius: 15px; background: var(--pcs, var(--pink-soft));
+    display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 900; color: var(--pcd, var(--pink-deep)); }
+  .proj-head h4 { font-size: 20px; font-weight: 900; line-height: 1.35; }
+  .proj-scale { font-size: 12.8px; color: var(--text-2); font-weight: 600; margin-top: 4px; }
+  .proj-scale b { color: var(--pcd, var(--pink-deep)); }
+  .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+  @media (max-width: 780px) { .proj-grid { grid-template-columns: 1fr; gap: 14px; } }
+  .proj-cell { background: #fffafc; border: 1.5px dashed rgba(232,148,173,.42); border-radius: 16px; padding: 15px 17px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 3px 0 -1px #fff, 0 8px 16px rgba(52,45,38,.05); }
+  .proj-cell:nth-child(odd)  { transform: rotate(-0.35deg); }
+  .proj-cell:nth-child(even) { transform: rotate(0.3deg); }
+  .proj-cell.wide { grid-column: 1 / -1; }
+  .proj-cell h5 { font-size: 11.5px; font-weight: 900; letter-spacing: .12em; color: var(--pcd, var(--pink-deep)); margin-bottom: 9px; }
+  .proj-cell ul li { position: relative; padding-left: 15px; font-size: 13.3px; color: var(--text); margin-bottom: 6px; line-height: 1.6; }
+  .proj-cell ul li::before { content: "·"; position: absolute; left: 3px; color: var(--pc, var(--pink)); font-weight: 900; }
+  .proj-cell b { color: var(--pink-deep); }
+  .proj-take { margin-top: 16px; padding: 13px 17px; border-radius: 14px; background: var(--pcs, var(--pink-soft));
+    font-size: 13.2px; color: var(--text); line-height: 1.7; }
+  .proj-take b { color: var(--pcd, var(--pink-deep)); }
+
+  .sop-band { background: var(--card); border-radius: var(--radius-lg); padding: 30px 34px;
+    box-shadow: var(--paper-lift), var(--paper-edge), 0 16px 36px rgba(52,45,38,.11); border: 1px solid var(--line); }
+  .sop-chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; }
+  .sop-chips span { font-size: 13px; font-weight: 700; color: var(--text); background: var(--bg-deep);
+    border-radius: 999px; padding: 7px 15px; border: 1px solid rgba(232,148,173,.3); }
+  .sop-band .sop-foot { margin-top: 18px; font-size: 13.2px; color: var(--text-2); }
+
+  /* ========== 作品墙 ========== */
+  .gal-group { margin-bottom: 60px; }
+  .gal-group:last-child { margin-bottom: 0; }
+  .gal-title { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+  .gal-title b { font-size: 17px; font-weight: 900; color: var(--text); }
+  .gal-title .en { font-family: var(--font-se); font-style: italic; font-size: 12px; color: var(--text-3); letter-spacing: .14em; }
+  .gal-title .cnt { font-size: 12px; color: var(--text-3); background: var(--bg-deep); border-radius: 999px; padding: 3px 10px; font-weight: 700; }
+  .gal-cols { columns: 3; column-gap: 16px; }
+  @media (max-width: 900px) { .gal-cols { columns: 2; } }
+  @media (max-width: 560px) { .gal-cols { columns: 1; } }
+  .gal-item { break-inside: avoid; margin: 0 0 16px; background: var(--card); border-radius: 14px; overflow: hidden;
+    box-shadow: var(--paper-lift), 0 4px 0 -2px var(--bg-deep), 0 10px 24px rgba(52,45,38,.09);
+    border: 1px solid var(--line); transition: transform .22s ease, box-shadow .22s ease; }
+  .gal-item:nth-child(3n+2) { transform: rotate(-0.5deg); }
+  .gal-item:nth-child(3n)   { transform: rotate(0.4deg); }
+  .gal-item:hover { transform: translateY(-4px) rotate(0deg); box-shadow: var(--paper-lift), 0 4px 0 -2px var(--bg-deep), 0 18px 40px rgba(52,45,38,.15); }
+  .gal-item img { width: 100%; display: block; }
+  .gal-cap { padding: 10px 13px 12px; font-size: 12.5px; line-height: 1.5; color: var(--text-2); }
+  .gal-cap b { display: block; color: var(--text); font-size: 13px; margin-bottom: 2px; }
+  .gal-note { margin: -26px auto 0; max-width: 660px; text-align: center; font-size: 13px; color: var(--text-3); }
+
+  /* ---------- v4 纸艺层叠 · 小屏收敛：窄屏去掉错位，只留纸叠边与轻阴影 ---------- */
+  @media (max-width: 660px) {
+    .pf-stat:nth-child(odd), .pf-stat:nth-child(even), .pf-stat:nth-child(3n),
+    .map-card:nth-child(3n+1), .map-card:nth-child(3n+2), .map-card:nth-child(3n),
+    .cap-num-cell:nth-child(odd), .cap-num-cell:nth-child(even),
+    .tl-item:nth-of-type(odd) .tl-card, .tl-item:nth-of-type(even) .tl-card,
+    .case-num:nth-child(odd), .case-num:nth-child(even),
+    .zync-cell:nth-child(odd), .zync-cell:nth-child(even),
+    .mod-card:nth-child(3n+2), .mod-card:nth-child(3n),
+    .method-card:nth-child(odd), .method-card:nth-child(even),
+    .proj-cell:nth-child(odd), .proj-cell:nth-child(even),
+    .gal-item:nth-child(3n+2), .gal-item:nth-child(3n),
+    .contact-band { transform: none; }
+    .map-card:nth-child(3n+2) { transform: translateY(0); }
+    .cap-wm { font-size: 88px; -webkit-text-stroke-width: 2px; }
+    .hero-wm { font-size: 90px; top: 80px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html">
+      <img src="assets/nomnom-icon.svg" alt="桨桨" />
+      <span class="logo-name">桨桨<small>JIANGJIANG · PORTFOLIO 2027</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#radar">能力总览</a>
+      <a href="#cap-ops">六块能力</a>
+      <a href="#timeline">经历</a>
+      <a href="#zync">会员实战</a>
+      <a href="#gallery">作品墙</a>
+      <a href="#cases">实习案例</a>
+      <a class="btn btn-pink nav-cta desktop-only" href="assets/resume-li-xinjie.pdf" download>简历 ⬇</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- ========== Hero ========== -->
+<section class="pf-hero">
+  <span class="hero-wm" aria-hidden="true">Portfolio</span>
+  <span class="glow g1" aria-hidden="true"></span>
+  <span class="glow g2" aria-hidden="true"></span>
+  <span class="glow g3" aria-hidden="true"></span>
+  <span class="float-emoji f1" aria-hidden="true">✨</span>
+  <span class="float-emoji f2" aria-hidden="true">🎨</span>
+  <span class="float-emoji f3" aria-hidden="true">📊</span>
+  <span class="float-emoji f4" aria-hidden="true">🤖</span>
+  <div class="container">
+    <span class="stamp">能力<br/>作品集</span>
+    <h1>把运营做深<br>把能力<span class="hl">做宽</span></h1>
+    <div class="en">SIX CAPABILITIES · PORTFOLIO 2027</div>
+    <p class="intro">浙江传媒学院传播学在读（GPA 4.7/5，专业前 3%）。5 段运营实习打底，其余五块能力——数据、文案、设计、AI、产品——都不是纸上谈兵：用 AI 生图做活动主视觉，不懂编程也把三个 App 做上了线。</p>
+    <div class="pf-stats">
+      <div class="pf-stat" style="--sc:#F0A8BC; --scd:#C87890;"><b>4.7</b><span>GPA / 5.0</span></div>
+      <div class="pf-stat" style="--sc:#90C8EC; --scd:#5098C8;"><b>5 段</b><span>运营实习</span></div>
+      <div class="pf-stat" style="--sc:#F5C97B; --scd:#B98436;"><b>6 项</b><span>可验证能力</span></div>
+      <div class="pf-stat" style="--sc:#C9B8E8; --scd:#8A74B8;"><b>1000+</b><span>调研样本</span></div>
+      <div class="pf-stat" style="--sc:#E08090; --scd:#C87890;"><b>12 份</b><span>SOP 文档</span></div>
+      <div class="pf-stat" style="--sc:#80B880; --scd:#4F7D4F;"><b>3 个</b><span>独立产品</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 能力雷达 ========== -->
+<section class="section sec-slim" id="radar">
+  <div class="container">
+    <div class="radar-card reveal">
+      <svg class="radar-svg" viewBox="0 0 340 330" role="img" aria-label="六项能力自评雷达图">
+        <defs>
+          <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#F0A8BC" stop-opacity=".55"/>
+            <stop offset="100%" stop-color="#90C8EC" stop-opacity=".45"/>
+          </linearGradient>
+        </defs>
+        <!-- 网格（4 层） -->
+        <polygon points="170,137.5 193.8,151.25 193.8,178.75 170,192.5 146.2,178.75 146.2,151.25" fill="none" stroke="#F0A8BC" stroke-opacity=".22" stroke-width="1"/>
+        <polygon points="170,110 217.6,137.5 217.6,192.5 170,220 122.4,192.5 122.4,137.5" fill="none" stroke="#F0A8BC" stroke-opacity=".22" stroke-width="1"/>
+        <polygon points="170,82.5 241.4,123.75 241.4,206.25 170,247.5 98.6,206.25 98.6,123.75" fill="none" stroke="#F0A8BC" stroke-opacity=".22" stroke-width="1"/>
+        <polygon points="170,55 265.3,110 265.3,220 170,275 74.7,220 74.7,110" fill="none" stroke="#F0A8BC" stroke-opacity=".3" stroke-width="1.2"/>
+        <!-- 六条轴 -->
+        <g stroke="#C9B8E8" stroke-opacity=".3" stroke-width="1">
+          <line x1="170" y1="165" x2="170" y2="55"/>
+          <line x1="170" y1="165" x2="265.3" y2="110"/>
+          <line x1="170" y1="165" x2="265.3" y2="220"/>
+          <line x1="170" y1="165" x2="170" y2="275"/>
+          <line x1="170" y1="165" x2="74.7" y2="220"/>
+          <line x1="170" y1="165" x2="74.7" y2="110"/>
+        </g>
+        <!-- 数据多边形 -->
+        <polygon points="170,66 244.3,122.1 251,211.8 170,247.5 86.2,213.4 93.8,121"
+          fill="url(#rg)" stroke="#C87890" stroke-width="2.2" stroke-linejoin="round"/>
+        <g fill="#C87890">
+          <circle cx="170" cy="60.5" r="3.4"/><circle cx="248.1" cy="119.9" r="3.4"/>
+          <circle cx="253.8" cy="213.4" r="3.4"/><circle cx="170" cy="253" r="3.4"/>
+          <circle cx="84.3" cy="214.5" r="3.4"/><circle cx="89" cy="118.2" r="3.4"/>
+        </g>
+        <!-- 轴标签 -->
+        <g font-size="13" font-weight="700" fill="#4a3f45" text-anchor="middle">
+          <text x="170" y="36">运营</text>
+          <text x="292" y="106">数据</text>
+          <text x="292" y="226">文案</text>
+          <text x="170" y="300">设计</text>
+          <text x="48" y="226">AI</text>
+          <text x="48" y="106">产品</text>
+        </g>
+      </svg>
+      <div class="radar-side">
+        <h3>六块能力，各自到什么程度</h3>
+        <p class="sub">不是六个形容词——每一格背后都有可查的项目、数据与产出。</p>
+        <div class="bar-row"><span class="bar-name">运营</span><span class="bar-track"><i style="width:90%; --bc:#F0A8BC;"></i></span><span class="bar-val">90</span></div>
+        <div class="bar-row"><span class="bar-name">数据</span><span class="bar-track"><i style="width:78%; --bc:#90C8EC;"></i></span><span class="bar-val">78</span></div>
+        <div class="bar-row"><span class="bar-name">文案</span><span class="bar-track"><i style="width:85%; --bc:#F5C97B;"></i></span><span class="bar-val">85</span></div>
+        <div class="bar-row"><span class="bar-name">设计</span><span class="bar-track"><i style="width:75%; --bc:#C9B8E8;"></i></span><span class="bar-val">75</span></div>
+        <div class="bar-row"><span class="bar-name">AI</span><span class="bar-track"><i style="width:88%; --bc:#80B880;"></i></span><span class="bar-val">88</span></div>
+        <div class="bar-row"><span class="bar-name">产品</span><span class="bar-track"><i style="width:80%; --bc:#E08090;"></i></span><span class="bar-val">80</span></div>
+      </div>
+    </div>
+    <p class="band-note">＊ 相对强度自评，不是量化考核分数，用于一眼看出重心分布。</p>
+  </div>
+</section>
+
+<!-- ========== 能力地图 ========== -->
+<section class="section sec-slim" id="map">
+  <div class="container">
+    <div class="sec-head reveal" data-en="CAPABILITY MAP">
+      <span class="tape"></span>
+      <h2>能力地图：<span class="hl">六块拼图</span></h2>
+      <p>六块都能拿出证据的能力。点开任意一块看细节。</p>
+    </div>
+    <div class="map-grid">
+      <a class="map-card reveal" style="--ac:#F0A8BC; --acs:#fff0f5; --acd:#C87890;" href="#cap-ops">
+        <span class="map-wm" aria-hidden="true">01</span>
+        <div class="map-ico">📊</div>
+        <h3>运营能力 <i>OPS</i></h3>
+        <p>用户 / 会员 / 活动 / 私域 / 内容 / 店铺，五种形态都跑过。</p>
+        <div class="map-hint"><span>15+ 场活动 · 1.4 万+ 拉新</span><span>→</span></div>
+      </a>
+      <a class="map-card reveal" style="--ac:#90C8EC; --acs:#eef7fd; --acd:#5098C8;" href="#cap-data">
+        <span class="map-wm" aria-hidden="true">02</span>
+        <div class="map-ico">📈</div>
+        <h3>数据分析 <i>DATA</i></h3>
+        <p>问卷设计到结论输出全流程独立跑通，不做凭感觉的决策。</p>
+        <div class="map-hint"><span>1000+ 有效样本</span><span>→</span></div>
+      </a>
+      <a class="map-card reveal" style="--ac:#F5C97B; --acs:#fdf4e4; --acd:#B98436;" href="#cap-copy">
+        <span class="map-wm" aria-hidden="true">03</span>
+        <div class="map-ico">✍️</div>
+        <h3>文案能力 <i>COPY</i></h3>
+        <p>小红书笔记、短视频脚本、活动卖点、产品官网、SOP 文档。</p>
+        <div class="map-hint"><span>单篇 8000+ 互动</span><span>→</span></div>
+      </a>
+      <a class="map-card reveal" style="--ac:#C9B8E8; --acs:#f3eefb; --acd:#8A74B8;" href="#cap-design">
+        <span class="map-wm" aria-hidden="true">04</span>
+        <div class="map-ico">🎨</div>
+        <h3>设计能力 <i>DESIGN</i></h3>
+        <p>活动主视觉、banner、App 界面、IP 衍生、封面排版。</p>
+        <div class="map-hint"><span>全网 30w+ 曝光</span><span>→</span></div>
+      </a>
+      <a class="map-card reveal" style="--ac:#80B880; --acs:#edf6ed; --acd:#4F7D4F;" href="#cap-ai">
+        <span class="map-wm" aria-hidden="true">05</span>
+        <div class="map-ico">🤖</div>
+        <h3>AI 应用 <i>AI</i></h3>
+        <p>不止会用：AI 生图进商用物料，AI 协作把产品真做出来。</p>
+        <div class="map-hint"><span>3 个产品落地</span><span>→</span></div>
+      </a>
+      <a class="map-card reveal" style="--ac:#E08090; --acs:#ffeaf1; --acd:#C87890;" href="#cap-product">
+        <span class="map-wm" aria-hidden="true">06</span>
+        <div class="map-ico">🧩</div>
+        <h3>产品落地 <i>PRODUCT</i></h3>
+        <p>从需求、设计到开发上线，一个人跑完一整条链路。</p>
+        <div class="map-hint"><span>iOS / 安卓 / 网页</span><span>→</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 六块能力详情 ========== -->
+<section class="section sec-slim">
+  <div class="container">
+
+    <!-- 01 运营 -->
+    <div class="cap reveal" id="cap-ops" style="--ac:#F0A8BC; --acs:#fff0f5; --acd:#C87890;">
+      <span class="cap-wm" aria-hidden="true">01</span>
+      <div class="cap-head">
+        <div class="cap-ico">📊</div>
+        <div class="cap-head-txt">
+          <div class="cap-num">CAPABILITY 01</div>
+          <h2>运营能力 <em>OPS</em></h2>
+        </div>
+      </div>
+      <p class="cap-sub">从会员体系到大促执行，从 0→1 账号冷启动到 50 万+ 曝光，五种运营形态都独立跑过。</p>
+      <div class="cap-tags"><span>用户运营</span><span>会员运营</span><span>活动运营</span><span>私域社群</span><span>内容运营</span><span>店铺运营</span></div>
+      <div class="cap-grid">
+        <div>
+          <div class="evid-row"><span class="evid-src">认养一头牛</span>会员活动独立配置 <b>15+ 场</b>，单场 UV 峰值 <b>2 万+</b>，累计拉新入会 <b>1.4 万+</b>；周度复盘迭代优化。</div>
+          <div class="evid-row"><span class="evid-src">认养一头牛</span>826 会员日核心成员：跟进会员专属权益模块与跨部门协调（供应链 / 设计 / 天猫京东抖音），统筹<b>万级礼品搭赠</b>按期交付。</div>
+          <div class="evid-row"><span class="evid-src">认养一头牛</span>生日礼权益升级：推动<b>鲜花 → 黑土限定有机奶卡 + 员工手写信</b>；筛选近半年消费 <b>185 元及以上</b>用户按客单价分层，拆分发货清单 <b>750 份</b>（会员 689 / 天猫 20 / 客情 30 / 抖音 11）。</div>
+          <div class="evid-row"><span class="evid-src">认养一头牛</span>四季礼权益运营：秋季五常大米 <b>4000 份</b>采购与履约，拆给积分兑换 / 内宣活动 / 线下伴手礼 / 社群抽奖四个场景；夏季桃子礼集赞配置 + 晒图有礼，产出 UGC <b>120+ 篇</b>。</div>
+          <div class="evid-row"><span class="evid-src">认养一头牛</span>线下主题展：品牌十周年广州阿那亚丰收季展，筛选 <b>20 位</b>优质用户故事并完成授权沟通与招募，展后回收小红书笔记、整理收货地址与伴手礼发放。</div>
+          <div class="evid-row"><span class="evid-src">认养一头牛</span>内宣活动策划：首届创意米王争霸赛（朋友圈集赞 15 / 30 / 66 三档 + 现场厨艺评选），小红书产出 <b>72 篇</b>、预估曝光 <b>20000+</b>。</div>
+          <div class="evid-row"><span class="evid-src">萤石 · 海康威视</span>「萤粉俱乐部」私域运营：策划互动话题 <b>15+ 期</b>，日均处理用户咨询 15+ 条；执行 <b>9 场</b>用户共创活动。</div>
+          <div class="evid-row"><span class="evid-src">九阳股份</span>品牌内容投放累计曝光 <b>50 万+</b>、互动 <b>1 万+</b>；拆解漏斗指标反哺 4 个选题方向。</div>
+          <div class="evid-row"><span class="evid-src">晓怪兽食品</span>视频号从 <b>0 搭建</b>：50+ 条视频、涨粉 <b>1200+</b>，独立完成直播执行与小店售后。</div>
+          <div class="evid-row"><span class="evid-src">杭州星曌</span>线下活动覆盖 <b>1 万+ 人次</b>，现场引导新增用户 <b>800+</b>；活动期转化率提升 15%。</div>
+        </div>
+        <div class="cap-nums">
+          <div class="cap-num-cell"><b>5 段</b><span>运营实习</span></div>
+          <div class="cap-num-cell"><b>15+ 场</b><span>月度活动配置</span></div>
+          <div class="cap-num-cell"><b>1.4 万+</b><span>累计拉新入会</span></div>
+          <div class="cap-num-cell"><b>万级</b><span>礼品搭赠统筹</span></div>
+          <div class="cap-num-cell"><b>750 份</b><span>生日礼寄样</span></div>
+          <div class="cap-num-cell"><b>12 份</b><span>SOP / 操作手册</span></div>
+        </div>
+      </div>
+      <div class="cap-tools"><b>方法与工具：</b>会员体系搭建 · 活动配置后台 · 用户分层与筛选 · 周度数据复盘 · 跨部门排期</div>
+    </div>
+
+    <!-- 02 数据 -->
+    <div class="cap reveal" id="cap-data" style="--ac:#90C8EC; --acs:#eef7fd; --acd:#5098C8;">
+      <span class="cap-wm" aria-hidden="true">02</span>
+      <div class="cap-head">
+        <div class="cap-ico">📈</div>
+        <div class="cap-head-txt">
+          <div class="cap-num">CAPABILITY 02</div>
+          <h2>数据分析 <em>DATA</em></h2>
+        </div>
+      </div>
+      <p class="cap-sub">从 0→1 设计问卷体系，到清洗交叉分析、输出能落地的结论——不靠感觉做决策。</p>
+      <div class="cap-tags"><span>定量调研设计</span><span>交叉分析</span><span>NPS 分析</span><span>用户画像</span><span>漏斗拆解</span><span>可视化</span></div>
+      <div class="cap-grid">
+        <div>
+          <div class="evid-row"><span class="evid-src">认养一头牛</span>独立设计问卷体系：用户画像 / 使用行为 / 满意度 / 改进建议全覆盖，配置<b>后台跳题逻辑 + 积分激励</b>，多渠道投放回收有效样本 <b>1000+</b>。</div>
+          <div class="evid-row"><span class="evid-src">认养一头牛</span>数据清洗与交叉分析，输出<b>用户画像与产品偏好报告</b>；调研结论直接应用于生日礼权益升级（<b>2 项</b>产品调研全流程）。</div>
+          <div class="evid-row"><span class="evid-src">认养一头牛</span>主导月度 <b>NPS 调研</b>与会员俱乐部数据周度复盘，形成固定机制。</div>
+          <div class="evid-row"><span class="evid-src">认养一头牛</span>把调研结论落回执行：生日礼用户筛选口径定为「近半年消费 185 元及以上」，再按客单价分层匹配不同权益——<b>从数据定义到名单产出</b>全流程。</div>
+          <div class="evid-row"><span class="evid-src">九阳股份</span>拆解播放 / 完播 / 点击 / 进店<b>漏斗指标</b>，总结爆款逻辑并优化 4 个选题方向。</div>
+          <div class="evid-row"><span class="evid-src">萤石 · 海康威视</span>内容投放数据复盘，用数据反哺下一轮选题。</div>
+        </div>
+        <div class="cap-nums">
+          <div class="cap-num-cell"><b>1000+</b><span>有效样本量</span></div>
+          <div class="cap-num-cell"><b>2 项</b><span>调研全流程</span></div>
+          <div class="cap-num-cell"><b>1000+</b><span>NPS 样本</span></div>
+          <div class="cap-num-cell"><b>周度</b><span>数据复盘机制</span></div>
+        </div>
+      </div>
+      <div class="cap-tools"><b>工具：</b><span class="tl-chip">Python</span><span class="tl-chip">SPSS</span><span class="tl-chip">SQL</span><span class="tl-chip">Tableau</span><span class="tl-chip">八爪鱼</span><span class="tl-chip">问卷星后台</span></div>
+    </div>
+
+    <!-- 03 文案 -->
+    <div class="cap reveal" id="cap-copy" style="--ac:#F5C97B; --acs:#fdf4e4; --acd:#B98436;">
+      <span class="cap-wm" aria-hidden="true">03</span>
+      <div class="cap-head">
+        <div class="cap-ico">✍️</div>
+        <div class="cap-head-txt">
+          <div class="cap-num">CAPABILITY 03</div>
+          <h2>文案能力 <em>COPY</em></h2>
+        </div>
+      </div>
+      <p class="cap-sub">写的东西有人看、还能转化——从平台笔记到产品官网，从卖点提炼到能查的文档。</p>
+      <div class="cap-tags"><span>小红书笔记</span><span>短视频脚本</span><span>活动文案</span><span>卖点提炼</span><span>产品官网</span><span>SOP / FAQ</span></div>
+      <div class="cap-grid">
+        <div>
+          <div class="evid-row"><span class="evid-src">香香笨笨包</span>自营小红书美食号：固定栏目《100 期下沙吃饭记》《热量测评》，从 0 冷启动，<b>单篇互动 8000+</b>，用热量标注做出差异化辨识度。</div>
+          <div class="evid-row"><span class="evid-src">认养一头牛</span>826 会员日衍生品「丰收包」<b>卖点提炼与文案</b>（含详情页 demo）；沉淀 <b>12 份</b> SOP 与操作手册——调研执行、活动配置、审核话术、充值核销、分货处理，换个人照着做也能跑通。</div>
+          <div class="evid-row"><span class="evid-src">认养一头牛</span>社区话题活动说明模板：活动主题 / 时间 / 参与方式 / 奖项设置 / 活动规则 / 注意事项成套成稿；配一套帖子审核<b>驳回话术</b>，团队反复复用。</div>
+          <div class="evid-row"><span class="evid-src">萤石 · 海康威视</span>小红书 / 企微朋友圈内容策划与分发，输出 <b>40+ 条</b>短视频与海报的脚本、文案。</div>
+          <div class="evid-row"><span class="evid-src">nomnom</span>独立撰写产品官网、产品详情页与上架文案；搭建小红书内容体系（12 篇完整成稿 + 20 条选题库 + 评论区话术）。</div>
+          <div class="evid-row"><span class="evid-src">大笨狗 IP</span>衍生日历的<b>节日梗与排版文案</b>，全网曝光 30w+。</div>
+        </div>
+        <div class="cap-nums">
+          <div class="cap-num-cell"><b>8000+</b><span>单篇互动</span></div>
+          <div class="cap-num-cell"><b>40+ 条</b><span>视频/海报文案</span></div>
+          <div class="cap-num-cell"><b>12 篇</b><span>内容体系成稿</span></div>
+          <div class="cap-num-cell"><b>3+ 场景</b><span>SOP 文档覆盖</span></div>
+        </div>
+      </div>
+      <div class="cap-tools"><b>载体：</b><span class="tl-chip">小红书笔记</span><span class="tl-chip">短视频口播稿</span><span class="tl-chip">活动主视觉文案</span><span class="tl-chip">产品官网</span><span class="tl-chip">SOP / FAQ</span></div>
+    </div>
+
+    <!-- 04 设计 -->
+    <div class="cap reveal" id="cap-design" style="--ac:#C9B8E8; --acs:#f3eefb; --acd:#8A74B8;">
+      <span class="cap-wm" aria-hidden="true">04</span>
+      <div class="cap-head">
+        <div class="cap-ico">🎨</div>
+        <div class="cap-head-txt">
+          <div class="cap-num">CAPABILITY 04</div>
+          <h2>设计能力 <em>DESIGN</em></h2>
+        </div>
+      </div>
+      <p class="cap-sub">审美能落地成物料，不只是会用工具——活动主视觉、App 界面、IP 衍生都出过成品。</p>
+      <div class="cap-tags"><span>活动主视觉</span><span>Banner / 弹窗</span><span>App 界面</span><span>IP 二次创作</span><span>封面排版</span></div>
+      <div class="cap-grid">
+        <div>
+          <div class="evid-row"><span class="evid-src">认养一头牛</span>用 AI 生图完成活动主视觉、banner、弹窗设计（<b>长隆联名、研学报名、生日礼</b>等），直接用于线上活动。</div>
+          <div class="evid-row"><span class="evid-src">大笨狗 IP</span>衍生日历：独立完成 Procreate 二次创作并全网分发，全网曝光 <b>30w+</b>、累计获赞 <b>10w+</b>。</div>
+          <div class="evid-row"><span class="evid-src">nomnom</span>从 0 定义奶白粉手帐风视觉体系：图标、界面、插画贴纸、上架物料（App Store 图 / 推广图）全部自产。</div>
+          <div class="evid-row"><span class="evid-src">香香笨笨包</span>探店内容<b>拍摄 + 修图 + 封面排版</b>一体化，形成统一账号视觉。</div>
+          <div class="evid-row"><span class="evid-src">萤石 · 海康威视</span>短视频与海报设计，剪映 · PS 独立产出 <b>40+ 条</b>。</div>
+        </div>
+        <div class="cap-nums">
+          <div class="cap-num-cell"><b>30w+</b><span>IP 作品曝光</span></div>
+          <div class="cap-num-cell"><b>10w+</b><span>累计获赞</span></div>
+          <div class="cap-num-cell"><b>40+ 条</b><span>海报 / 视频产出</span></div>
+          <div class="cap-num-cell"><b>1 套</b><span>从 0 建的视觉体系</span></div>
+        </div>
+      </div>
+      <div class="cap-tools"><b>工具：</b><span class="tl-chip">Photoshop</span><span class="tl-chip">剪映</span><span class="tl-chip">Procreate</span><span class="tl-chip">AI 生图工具</span><span class="tl-chip">排版规范</span></div>
+    </div>
+
+    <!-- 05 AI -->
+    <div class="cap reveal" id="cap-ai" style="--ac:#80B880; --acs:#edf6ed; --acd:#4F7D4F;">
+      <span class="cap-wm" aria-hidden="true">05</span>
+      <div class="cap-head">
+        <div class="cap-ico">🤖</div>
+        <div class="cap-head-txt">
+          <div class="cap-num">CAPABILITY 05</div>
+          <h2>AI 应用 <em>AI</em></h2>
+        </div>
+      </div>
+      <p class="cap-sub">不是「会聊天」——AI 生图进了商用物料，AI 协作把产品真做上线了。</p>
+      <div class="cap-tags"><span>AI 生图</span><span>AI 辅助开发</span><span>内容提效</span><span>数据整理</span><span>工作流拆解</span></div>
+      <div class="cap-grid">
+        <div>
+          <div class="evid-row"><span class="evid-src">设计落地</span>活动主视觉 / banner / 弹窗由 AI 生图完成并<b>实际投放使用</b>——不是拿 AI 出概念图，是出能用的物料。</div>
+          <div class="evid-row"><span class="evid-src">流程沉淀</span>把「AI 生图 + 稿定精修」写成<b>可复用的出稿流程</b>：按活动主题 / 主标题 / 尺寸先出竖版弹窗，再延展成横版 Banner，最后统一精修——沉淀成团队 SOP，出稿周期压到当天。</div>
+          <div class="evid-row"><span class="evid-src">数据整理</span>用 AI 按「商品 × 成本中心」批量整理京东慧采对账表，分批校验写入；免费订单导入前先用 AI 扫<b>地址缺区与手机号格式</b>，把人工核验的返工率降下来。</div>
+          <div class="evid-row"><span class="evid-src">产品开发</span>不懂编程，用 AI 协作独立完成 <b>3 个可用产品</b>（卡路里 App、厨房管理 App、个人工作台），从需求到上线全流程。</div>
+          <div class="evid-row"><span class="evid-src">内容提效</span>用 AI 搭建内容体系与选题库，把「想选题」的时间换成「写完稿」的时间。</div>
+        </div>
+        <div class="cap-nums">
+          <div class="cap-num-cell"><b>3 个</b><span>AI 协作落地的产品</span></div>
+          <div class="cap-num-cell"><b>商用</b><span>AI 生图用于活动</span></div>
+          <div class="cap-num-cell"><b>1 套</b><span>AI 出稿流程 SOP</span></div>
+          <div class="cap-num-cell"><b>0 基础</b><span>编程起点</span></div>
+        </div>
+      </div>
+      <div class="cap-tools"><b>用法：</b>AI 生图（视觉物料）· AI 编程协作（产品开发）· AI 文案辅助（内容提效）· AI 数据处理（清洗核对）</div>
+    </div>
+
+    <!-- 06 产品 -->
+    <div class="cap reveal" id="cap-product" style="--ac:#E08090; --acs:#ffeaf1; --acd:#C87890;">
+      <span class="cap-wm" aria-hidden="true">06</span>
+      <div class="cap-head">
+        <div class="cap-ico">🧩</div>
+        <div class="cap-head-txt">
+          <div class="cap-num">CAPABILITY 06</div>
+          <h2>产品落地 <em>PRODUCT</em></h2>
+        </div>
+      </div>
+      <p class="cap-sub">从「我想要」到「能用」——需求、设计、开发、上架、运营，一个人跑完整条链路。</p>
+      <div class="cap-tags"><span>需求定义</span><span>交互设计</span><span>视觉体系</span><span>开发落地</span><span>上架与运营</span></div>
+      <div class="cap-grid">
+        <div>
+          <div class="evid-row"><span class="evid-src">nomnom 卡路里 App</span>独立设计 × 开发 × 运营：扫条码 / 拍照识别 / 中文搜索都能记，奶茶点单式算热量，手帐贴纸打卡、私密好友链。<b>iOS · 安卓 · 网页三端</b>同步推进。</div>
+          <div class="evid-row"><span class="evid-src">MiseMise 厨房 App</span>面向「事前备菜」的食材管理：拍照入库、临期提醒、备菜计划排菜、周报统计，与卡路里 App 数据打通（开发中）。</div>
+          <div class="evid-row"><span class="evid-src">JINLOG 个人工作台</span>日记 / 清单 / 追踪一体的全功能数字手帐 PWA，日常高频自用——也是「一个人也能把产品做出来」的第一次验证。</div>
+          <div class="evid-row"><span class="evid-src">产品官网上线</span>为自研 App 搭建独立官网、产品详情页与推广物料，自己写文案、自己做图、自己发布。</div>
+        </div>
+        <div class="cap-nums">
+          <div class="cap-num-cell"><b>3 个</b><span>独立开发产品</span></div>
+          <div class="cap-num-cell"><b>3 端</b><span>iOS / 安卓 / 网页</span></div>
+          <div class="cap-num-cell"><b>3 条</b><span>产品线并行</span></div>
+          <div class="cap-num-cell"><b>0 → 1</b><span>全流程独立完成</span></div>
+        </div>
+      </div>
+      <div class="cap-tools"><b>链路：</b>用户需求 → 功能定义 → 视觉与交互 → 开发实现 → 上线发布 → 内容运营</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== 经历时间线 ========== -->
+<section class="section sec-blue" id="timeline">
+  <div class="container">
+    <div class="sec-head reveal" data-en="TIMELINE">
+      <span class="tape"></span>
+      <h2>一路走过来，<span class="hl">没有空档</span></h2>
+      <p>5 段实习 + 3 个自己的产品，一条时间线排下来看。</p>
+    </div>
+    <div class="tl">
+      <div class="tl-item reveal">
+        <div class="tl-card" style="--tc:#C9B8E8; --tcs:#f3eefb;">
+          <span class="tl-when">2025.05 – 2025.10</span>
+          <h3>杭州星曌文化 <em>店铺运营</em></h3>
+          <p>拆解销售数据识别高潜品类，参与活动方案与素材执行，转化率提升 <b>15%</b>；线下活动覆盖 <b>1 万+ 人次</b>。</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-card" style="--tc:#F5C97B; --tcs:#fdf4e4;">
+          <span class="tl-when">2025.11 – 2026.02</span>
+          <h3>晓怪兽食品 <em>新媒体运营</em></h3>
+          <p>视频号从 0 搭建：<b>50+ 条</b>视频、涨粉 <b>1200+</b>，塑造工厂直营人设；独立完成直播执行与小店售后。</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-card" style="--tc:#80B880; --tcs:#edf6ed;">
+          <span class="tl-when">2026.02 – 2026.04</span>
+          <h3>九阳股份 <em>品牌运营</em></h3>
+          <p>产品内容投放累计曝光 <b>50 万+</b>、互动 <b>1 万+</b>；拆解漏斗指标总结爆款逻辑，优化 4 个选题方向。</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-card" style="--tc:#90C8EC; --tcs:#eef7fd;">
+          <span class="tl-when">2026.04 – 2026.06</span>
+          <h3>海康威视 · 萤石网络 <em>用户运营</em></h3>
+          <p>「萤粉俱乐部」私域内容与社区运营，<b>40+ 条</b>短视频与海报、<b>15+ 期</b>互动话题，执行 9 场用户共创。</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-card" style="--tc:#F0A8BC; --tcs:#fff0f5;">
+          <span class="tl-when">2026.07 – 至今</span>
+          <h3>认养一头牛 <em>用户运营 · 会员方向</em></h3>
+          <p>独立完成 <b>1000+ 样本</b>定量调研；826 会员日核心成员；独立配置月度活动 <b>15+ 场</b>；跑过 <b>7 个</b>项目、沉淀 <b>12 份</b> SOP。</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-card" style="--tc:#C87890; --tcs:#ffeaf1;">
+          <span class="tl-when">全程并行 · 个人项目</span>
+          <h3>JINLOG → nomnom → MiseMise <em>独立开发者</em></h3>
+          <p>实习之外的时间全部用来做产品：从自用工作台到三端上线的卡路里 App，再到厨房食材管理——<b>3 个产品</b>，全部自己设计、自己做出来。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 认养一头牛 · 会员运营实战全记录 ========== -->
+<section class="section" id="zync">
+  <div class="container">
+    <div class="sec-head reveal" data-en="CASE STUDY">
+      <span class="tape"></span>
+      <h2>会员运营实战：<span class="hl">五个模块 · 七个项目</span></h2>
+      <p>认养一头牛会员中心实习的完整记录——日常跑什么、项目怎么做、沉淀了什么。</p>
+    </div>
+
+    <div class="zync-band reveal">
+      <div class="zync-cell" style="--zc:#F0A8BC; --zcd:#C87890;"><b>5 大</b><span>日常工作模块</span></div>
+      <div class="zync-cell" style="--zc:#90C8EC; --zcd:#5098C8;"><b>7 个</b><span>项目复盘</span></div>
+      <div class="zync-cell" style="--zc:#F5C97B; --zcd:#B98436;"><b>12 份</b><span>SOP 与操作手册</span></div>
+      <div class="zync-cell" style="--zc:#C9B8E8; --zcd:#8A74B8;"><b>750 份</b><span>生日礼寄样拆分</span></div>
+    </div>
+
+    <!-- 一、日常五个模块 -->
+    <div class="sub-block reveal">
+      <div class="sub-head">
+        <span class="sn">PART 01</span>
+        <h3>日常运营：五个模块</h3>
+        <p>会员中心的活儿分成五块，每一块都跑出了可复用的文档。</p>
+      </div>
+      <div class="mod-grid">
+        <div class="mod-card" style="--mc:#90C8EC; --mcs:#eef7fd;">
+          <div class="mod-ico">📊</div>
+          <h4>用户调研与数据洞察</h4>
+          <ul>
+            <li>新品上市与权益迭代都需要用户数据支撑，定量调研<b>从问卷设计做到结论输出</b></li>
+            <li>问卷覆盖用户画像 / 使用行为 / 满意度 / 改进建议，配置后台跳题逻辑 + 积分激励</li>
+            <li>主导<b>月度 NPS 调研</b>与会员俱乐部数据周度复盘，形成固定机制</li>
+          </ul>
+          <div class="mod-sops">
+            <span class="ms-t">沉淀 SOP</span>
+            <span class="c">用户定量调研执行 SOP</span><span class="c">月度 NPS 调研流程</span><span class="c">会员俱乐部需求承接 SOP</span>
+          </div>
+        </div>
+        <div class="mod-card" style="--mc:#F0A8BC; --mcs:#fff0f5;">
+          <div class="mod-ico">📱</div>
+          <h4>会员小程序日常运营</h4>
+          <ul>
+            <li>每月活动排期与后台配置：抽奖、签到有礼、邀请入会、刮刮乐</li>
+            <li>从<b>策划 → 视觉 → 后台配置 → 上线 → 效果追踪</b>全流程独立跑通</li>
+            <li>活动视觉用 AI 生图 + 稿定精修，把出稿周期压到当天</li>
+          </ul>
+          <div class="mod-sops">
+            <span class="ms-t">沉淀 SOP</span>
+            <span class="c">小程序活动配置 SOP</span><span class="c">AI 辅助视觉设计流程</span>
+          </div>
+        </div>
+        <div class="mod-card" style="--mc:#F5C97B; --mcs:#fdf4e4;">
+          <div class="mod-ico">💬</div>
+          <h4>会员社区运营</h4>
+          <ul>
+            <li>帖子审核与驳回话术：正文需 ≥10 字连贯原创、须带指定话题、须配品牌实拍图</li>
+            <li>晒图有礼审核：核对话题是否带对、小红书链接是否提交正确</li>
+            <li>社区话题活动说明模板：投稿期 / 评选期 / 奖项设置 / 活动规则 / 注意事项成套</li>
+          </ul>
+          <div class="mod-sops">
+            <span class="ms-t">沉淀 SOP</span>
+            <span class="c">内容审核标准与驳回话术</span><span class="c">社区话题说明模板</span>
+          </div>
+        </div>
+        <div class="mod-card" style="--mc:#C9B8E8; --mcs:#f3eefb;">
+          <div class="mod-ico">🎁</div>
+          <h4>权益履约与日常支持</h4>
+          <ul>
+            <li>生日礼 / 四季礼名单筛选与发货跟进；积分兑换订单与过期积分补还核对</li>
+            <li>免费订单与奶卡提交：明细导入前先用 AI 扫一遍<b>地址缺区与手机号格式</b></li>
+            <li>短信套餐充值核销：<b>预付款申请 → 回单凭证 → 发票 OA 核销</b>三步走</li>
+          </ul>
+          <div class="mod-sops">
+            <span class="ms-t">沉淀 SOP</span>
+            <span class="c">短信充值核销 SOP</span><span class="c">免费订单提交 SOP</span>
+          </div>
+        </div>
+        <div class="mod-card" style="--mc:#80B880; --mcs:#edf6ed;">
+          <div class="mod-ico">🤝</div>
+          <h4>跨部门协同支持</h4>
+          <ul>
+            <li>配合哞星人开展会员联合活动，协调视觉上线与奖品发放</li>
+            <li>配合产品团队邀约用户访谈、调整问卷逻辑</li>
+            <li>配合私域团队做社群分发与线下活动；对接供应链、设计、天猫 / 京东 / 抖音渠道</li>
+          </ul>
+          <div class="mod-sops">
+            <span class="ms-t">沉淀 SOP</span>
+            <span class="c">京东慧采表格整理流程</span><span class="c">分货缺口处理</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 二、七个项目 -->
+    <div class="sub-block reveal">
+      <div class="sub-head">
+        <span class="sn">PART 02</span>
+        <h3>项目复盘：七个项目</h3>
+        <p>每个项目都按「规模背景 → 我负责的事 → 事后沉淀」拆开写。</p>
+      </div>
+
+      <div class="proj reveal" style="--pc:#F0A8BC; --pcs:#fff0f5; --pcd:#C87890;">
+        <div class="proj-head">
+          <div class="proj-num">01</div>
+          <div>
+            <h4>第五届 826 年度会员日</h4>
+            <div class="proj-scale">会员板块核心成员 · 权益模块与跨部门协调 · 统筹<b>万级礼品搭赠</b>按期交付</div>
+          </div>
+        </div>
+        <div class="proj-grid">
+          <div class="proj-cell">
+            <h5>背景</h5>
+            <ul>
+              <li>品牌年中核心营销场，要解决三个问题：<b>高消费用户占比下滑、超级会员客单下降、新会员客单走低</b></li>
+              <li>目标很明确：拉升超级会员单笔客单，同时把低客单用户往上引</li>
+            </ul>
+          </div>
+          <div class="proj-cell">
+            <h5>我负责的事</h5>
+            <ul>
+              <li>会员专属权益模块跟进：<b>生日礼升级方案落地</b>、秋季礼五常大米权益配置</li>
+              <li>小程序活动配置：全月签到有礼、会员日首日大抽奖、最后一天大抽奖、代言人线下活动专属抽奖</li>
+              <li>丰收包<b>详情页 demo</b></li>
+              <li>跨部门协调：供应链、设计团队、天猫 / 京东 / 抖音渠道侧</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proj-take"><b>沉淀：</b>大促的核心是「节点倒推」——从上线日期倒排物料、名单、测试、预案，每延期一天，后面所有环节都在挤。权益配置要留调整空间：四季礼和生日奶卡执行中出现了库存调整、规则变更、渠道临时加量，留好调整空间比「一次配到位」更重要。活动期间数据敏感度要前置，实时盯兑换率与奖品消耗速度，发现异常立刻调整。</div>
+      </div>
+
+      <div class="proj reveal" style="--pc:#90C8EC; --pcs:#eef7fd; --pcd:#5098C8;">
+        <div class="proj-head">
+          <div class="proj-num">02</div>
+          <div>
+            <h4>8 月会员生日礼权益升级</h4>
+            <div class="proj-scale">从每月 <b>100 束鲜花</b>升级为「黑土限定有机奶卡 + 员工手写信」 · 总寄样 <b>750 份</b></div>
+          </div>
+        </div>
+        <div class="proj-grid">
+          <div class="proj-cell">
+            <h5>我负责的事</h5>
+            <ul>
+              <li>用户筛选：近半年消费 <b>185 元及以上</b>的专家 &amp; 牧场主，按客单价分层匹配权益</li>
+              <li>发货清单整理：总量 750 份 → 会员 <b>689</b> / 天猫 <b>20</b> / 客情 <b>30</b> / 抖音 <b>11</b></li>
+              <li>内部联动：完善手写信书写指南与 <b>8 套模板</b>，联动 <b>50+</b> 员工参与，设 5 类特别奖</li>
+            </ul>
+          </div>
+          <div class="proj-cell">
+            <h5>物料与台账</h5>
+            <ul>
+              <li>定制物料到货追踪：手写信笺、麻绳、冰箱贴、种子纸、卡套、火漆印</li>
+              <li>采购全链路建台账：从下单到成本分摊到售后，每一步都记下来</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proj-take"><b>沉淀：</b>「有温度」的权益，执行细节决定成败——手写信要提前考虑模板、字数限制、内容方向，还要设激励，否则参与度起不来。定制物料必须预留充足时间：从打样到生产到入库至少两周。</div>
+      </div>
+
+      <div class="proj reveal" style="--pc:#C9B8E8; --pcs:#f3eefb; --pcd:#8A74B8;">
+        <div class="proj-head">
+          <div class="proj-num">03</div>
+          <div>
+            <h4>广州阿那亚十周年丰收季主题展</h4>
+            <div class="proj-scale">品牌十周年线下主题展 · 用户故事展为核心板块 · 筛选 <b>20 位</b>优质用户故事</div>
+          </div>
+        </div>
+        <div class="proj-grid">
+          <div class="proj-cell wide">
+            <h5>我负责的事</h5>
+            <ul>
+              <li>用户侧筹备：筛选 20 位优质用户故事，完成<b>授权沟通与活动招募</b></li>
+              <li>设计用户授权话术与参与激励方案</li>
+              <li>现场执行：图片处理与物料管理</li>
+              <li>展后跟进：收集小红书笔记、整理秋季礼收货地址、伴手礼发放</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proj-take"><b>沉淀：</b>用户授权沟通要有「说明书式」话术——讲清<b>展示位置、时长、激励、撤回机制</b>。线下活动的用户体验是完整闭环：从邀请话术到现场接待到展后伴手礼，每一步都在强化「被重视」的感觉。展后数据要趁热回收，活动结束是二次传播的起点。</div>
+      </div>
+
+      <div class="proj reveal" style="--pc:#F5C97B; --pcs:#fdf4e4; --pcd:#B98436;">
+        <div class="proj-head">
+          <div class="proj-num">04</div>
+          <div>
+            <h4>秋季四季礼（五常大米）</h4>
+            <div class="proj-scale">采购 <b>4000 份</b>五常大米作为会员秋季礼，覆盖多场景</div>
+          </div>
+        </div>
+        <div class="proj-grid">
+          <div class="proj-cell wide">
+            <h5>我负责的事</h5>
+            <ul>
+              <li>采购执行：合同盖章、预付款跟进、发货协调</li>
+              <li>问卷收集报名信息</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proj-take"><b>沉淀：</b>一个权益物料可以复用在 N 个场景——4000 份大米拆给<b>积分兑换、内宣活动、线下伴手礼、社群抽奖</b>，同一笔预算撬动多个场景的效果。</div>
+      </div>
+
+      <div class="proj reveal" style="--pc:#80B880; --pcs:#edf6ed; --pcd:#4F7D4F;">
+        <div class="proj-head">
+          <div class="proj-num">05</div>
+          <div>
+            <h4>长隆联名项目</h4>
+            <div class="proj-scale">品牌与长隆联名合作 · 涉及会员权益与研学活动报名</div>
+          </div>
+        </div>
+        <div class="proj-grid">
+          <div class="proj-cell wide">
+            <h5>我负责的事</h5>
+            <ul>
+              <li>用户招募问卷配置：问卷逻辑搭建、投放渠道设置、样本回收跟进</li>
+              <li>视觉设计：联名权益视觉、研学活动报名<b>全套视觉</b></li>
+            </ul>
+          </div>
+        </div>
+        <div class="proj-take"><b>落点：</b>一个项目里同时用上「问卷 → 投放 → 回收」的数据链路，和「主视觉 → 报名页」的设计链路——一个人可以同时握住项目的两端。</div>
+      </div>
+
+      <div class="proj reveal" style="--pc:#E08090; --pcs:#ffeaf1; --pcd:#C87890;">
+        <div class="proj-head">
+          <div class="proj-num">06</div>
+          <div>
+            <h4>夏季四季礼（桃子）</h4>
+            <div class="proj-scale">内部员工宣发 + 用户端 UGC 跟进 · 累计产出 UGC <b>120+ 篇</b></div>
+          </div>
+        </div>
+        <div class="proj-grid">
+          <div class="proj-cell wide">
+            <h5>我负责的事</h5>
+            <ul>
+              <li>活动执行：集赞活动配置（集 <b>36 赞</b>得定制冰霸杯），借员工朋友圈放大品牌声量</li>
+              <li>晒图有礼运营：小红书晒单额外得 <b>500 积分</b>，累计产出 UGC 120+ 篇</li>
+              <li>物料发放与售后跟进</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proj-take"><b>沉淀：</b>晒图激励要<b>前置说清楚</b>——讲清激励是什么、投稿要求有哪些，否则收上来的内容不合规，返工成本更高。</div>
+      </div>
+
+      <div class="proj reveal" style="--pc:#90C8EC; --pcs:#eef7fd; --pcd:#5098C8;">
+        <div class="proj-head">
+          <div class="proj-num">07</div>
+          <div>
+            <h4>秋季四季礼（大米）内宣 · 首届创意米王争霸赛</h4>
+            <div class="proj-scale">小红书产出 <b>72 篇</b> · 预估曝光 <b>20000+</b></div>
+          </div>
+        </div>
+        <div class="proj-grid">
+          <div class="proj-cell wide">
+            <h5>我负责的事</h5>
+            <ul>
+              <li>活动策划：朋友圈集赞阶梯（15 赞得大米 / 30 赞得玻璃碗 / 66 赞得大米礼盒）</li>
+              <li>米王争霸赛执行：报名 → 领米 → 现场参赛评选 → 前三名奖品发放</li>
+              <li>奖品管理：一头币、玻璃碗套组、大米礼盒、电饭煲的采购与发放</li>
+              <li>传播数据回收：小红书产出 72 篇，预估曝光 20000+</li>
+            </ul>
+          </div>
+        </div>
+        <div class="proj-take"><b>沉淀：</b>内宣活动要有「事件感」——集赞是基础盘，米王争霸赛才是记忆点，员工真的去做饭、去参赛，这个过程本身就是品牌理念的深度渗透。阶梯式激励覆盖不同人群，让轻度参与和重度传播的人都有收获；内宣也要和业务指标挂钩，提前想好这场活动能产出多少可复用的传播素材。</div>
+      </div>
+    </div>
+
+    <!-- 三、SOP 沉淀 -->
+    <div class="sub-block reveal">
+      <div class="sub-head">
+        <span class="sn">PART 03</span>
+        <h3>把做过的事，写成别人能照着做的文档</h3>
+        <p>实习结束时留给团队的，除了项目本身，还有这 12 份可复用的 SOP 与操作手册。</p>
+      </div>
+      <div class="sop-band">
+        <div class="sop-chips">
+          <span>用户定量调研执行 SOP</span>
+          <span>月度 NPS 调研执行流程</span>
+          <span>会员俱乐部需求承接 SOP</span>
+          <span>小程序活动配置 SOP</span>
+          <span>AI 辅助视觉设计流程</span>
+          <span>社区内容审核标准与驳回话术</span>
+          <span>社区话题说明模板</span>
+          <span>短信充值核销 SOP</span>
+          <span>免费订单提交 SOP</span>
+          <span>京东慧采表格整理流程</span>
+          <span>晒图有礼审核口径</span>
+          <span>衍生品与产品分货缺口处理</span>
+        </div>
+        <p class="sop-foot"><b>项目执行惯例：</b>项目不管大小都要列清楚——物料清单、名单清单、时间节点清单、异常预案清单；执行过程留「痕迹」——沟通记录、调整记录、异常处理记录都归档；最终把一次经验写成别人能照着做的 SOP。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 自研产品 ========== -->
+<section class="section sec-slim" id="products">
+  <div class="container">
+    <div class="sec-head reveal" data-en="MY OWN PRODUCTS">
+      <span class="tape"></span>
+      <h2>自研产品：<span class="hl">不会编程，做出了两个 App</span></h2>
+      <p>需求、设计、开发、验证、发布全流程自己扛——跟 AI 结对，把「我想用但没有」的东西做出来。</p>
+    </div>
+    <div class="pf-grid" style="grid-template-columns:repeat(2, 1fr);">
+      <div class="pf-card g-pinkblue reveal">
+        <span class="corner-emoji">🛶</span>
+        <div class="pf-emoji">🧋</div>
+        <h3>nomnom 卡路里 App</h3>
+        <span class="pf-role">独立产品人 · 设计 × 开发 × 运营</span>
+        <p>奶白粉色的热量小本子：扫条码、拍标签、搜中文都能记；内置品牌库的奶茶点单式热量计算器（1.1 万+ 款饮品数据）；手帐贴纸打卡、私密好友链、网页推送提醒。食物库 13,000+ 条、官方图覆盖 97%。</p>
+        <div class="pf-metrics"><span><i>11,000+</i> 奶茶饮品数据</span><span><i>3 端</i> 同步推进</span></div>
+        <a class="pf-link" href="nomnom.html">产品官网 →</a>
+      </div>
+      <div class="pf-card g-bluegreen reveal">
+        <span class="corner-emoji">🧊</span>
+        <div class="pf-emoji">🥬</div>
+        <h3>MiseMise 冰箱账本</h3>
+        <span class="pf-role">独立产品人 · 设计 × 开发 × 运营</span>
+        <p>天蓝色的备菜手帐：「苹果150g 半斤菠菜」一句话入库，先坏先吃；拍照/拍小票 AI 识别入库；备菜计划把一周三餐排出来（389 道内置家常菜，临期优先、营养配平）；不浪费率周报。与 nomnom 同账号互通。</p>
+        <div class="pf-metrics"><span><i>389 道</i> 内置菜谱</span><span><i>1,031 种</i> 食材保鲜知识</span></div>
+        <a class="pf-link" href="misemise.html">产品官网 →</a>
+      </div>
+    </div>
+    <p style="margin-top:22px;font-size:13.5px;color:var(--text-2);text-align:center;">两款产品的真实界面截图在下方作品墙「自研产品界面」分组，可点开看大图。</p>
+  </div>
+</section>
+
+<!-- ========== 作品墙 ========== -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tape"></span>
+      <h2>作品墙：<span class="hl">都摆出来看</span></h2>
+      <p data-en="WORKS ON DISPLAY"></p>
+      <p>从 banner 到礼盒，从活动跟拍到课程影像——做过的东西，都摆出来。</p>
+    </div>
+    <div id="galRoot"><!-- JS 渲染 --></div>
+    <!-- 点开看大图（v4.5）：点任意一张放大，点空白 / × / Esc 关掉 -->
+    <div class="lb" id="lb" aria-hidden="true">
+      <span class="lb-x" aria-hidden="true">×</span>
+      <button class="lb-nav lb-prev" type="button" aria-label="上一张">←</button>
+      <button class="lb-nav lb-next" type="button" aria-label="下一张">→</button>
+      <figure><img id="lbImg" alt="" /><figcaption id="lbCap"></figcaption></figure>
+    </div>
+    <p class="gal-note">以上均为实际投放到会员小程序 / 活动物料 / 社交账号的内容，横幅类为设计稿原图，场景类为实拍。</p>
+  </div>
+</section>
+
+<script>
+(function () {
+  var A = "assets/works/";
+  var GROUPS = [
+    { key: "brand", name: "品牌活动视觉", en: "CAMPAIGN VISUALS", dir: "brand/",
+      desc: "认养一头牛会员小程序：banner / 弹窗 / 海报 / 问卷视觉，全部实际投放",
+      items: [
+        ["brand-annual-member-day", "年度会员日主视觉", ""],
+        ["brand-activity-calendar", "26 年度会员日活动日历", ""],
+        ["brand-summer-poster-1", "夏季四季养牛海报 · 一", ""],
+        ["brand-summer-poster-2", "夏季四季养牛海报 · 二", ""],
+        ["brand-summer-poster-3", "夏季四季养牛海报 · 三", ""],
+        ["brand-chimelong", "长隆联名会员日视觉", ""],
+        ["brand-chimelong-banner", "长隆权益 banner", ""],
+        ["brand-peach-lottery", "「请你吃桃子」抽奖 banner", ""],
+        ["brand-peach-contest", "吃桃大赛内宣海报", ""],
+        ["brand-xiaoshu", "小暑节气抽奖 banner", ""],
+        ["brand-teachers-day", "教师节 banner", ""],
+        ["brand-birthday-card", "生日奶卡 banner", ""],
+        ["brand-autumn-banner", "秋季礼 banner", ""],
+        ["brand-flash-lottery", "每周三快闪抽奖 banner", ""],
+        ["brand-survey-icecream", "冰淇淋用户调研 · 问卷弹窗", ""],
+        ["brand-survey-anniversary", "十周年用户展招募问卷", ""],
+        ["brand-topic-summer", "社区话题 #夏日解暑好搭子", ""],
+        ["brand-topic-harvest", "社区话题 #分享我的丰收时刻", ""]
+      ] },
+    { key: "product", name: "产品与礼盒", en: "PRODUCT & GIFT BOX", dir: "product/",
+      desc: "秋季礼实拍与电商主图",
+      items: [
+        ["product-autumn-gift-1", "秋季四季礼 · 场景一", "黑土限定五常大米"],
+        ["product-autumn-gift-2", "秋季四季礼 · 场景二", ""],
+        ["product-autumn-gift-3", "秋季四季礼 · 场景三", ""],
+        ["product-autumn-gift-4", "秋季四季礼 · 场景四", ""],
+        ["product-autumn-gift-5", "秋季四季礼 · 场景五", ""],
+        ["product-autumn-gift-6", "秋季四季礼 · 场景六", ""],
+        ["product-harvest-pack", "826 会员日「丰收包」主图", ""],
+        ["product-rice-box", "五常大米礼盒主图", ""],
+        ["product-custom-tissue", "定制周边 · 纸巾", ""],
+        ["product-cooler-box", "夏日保温箱主图", ""]
+      ] },
+    { key: "event", name: "活动记录", en: "ON SITE", dir: "event/",
+      desc: "活动现场跟拍",
+      items: [
+        ["event-chimelong-1", "长隆联名活动 · 跟拍一", ""],
+        ["event-chimelong-2", "长隆联名活动 · 跟拍二", ""],
+        ["event-chimelong-3", "长隆飞乐园 · 活动现场", ""],
+        ["event-xinzhoukan-salon", "《新周刊》创刊 30 周年文化沙龙", ""]
+      ] },
+    { key: "photo", name: "内容拍摄", en: "CONTENT SHOOTING", dir: "photo/",
+      desc: "会员礼物料场景摆拍",
+      items: [
+        ["photo-dscf-1", "生日奶卡 · 手写信场景", ""],
+        ["photo-dscf-2", "年度会员日 · 定制明信片与鲜奶", ""],
+        ["photo-dscf-3", "火漆封缄 · 会员信件", ""],
+        ["photo-dscf-4", "会员礼 · 信件与邮戳", ""]
+      ] },
+    { key: "app", name: "自研产品界面", en: "APP SCREENS", dir: "app/",
+      desc: "nomnom 卡路里 App（奶白粉）与 MiseMise 冰箱账本（天蓝）的真实界面截图",
+      items: [
+        ["app-nomnom-milktea", "nomnom · 奶茶热量计算器", "品牌墙 · 11,000+ 款"],
+        ["app-nomnom-discover", "nomnom · 发现页", "计算器 / 烘焙表 / 好友"],
+        ["app-nomnom-monthly", "nomnom · 月度打卡", "日历总览"],
+        ["app-nomnom-foods", "nomnom · 食物库", "13,000+ 条 · 分类/品牌筛选"],
+        ["app-misemise-fridge", "MiseMise · 我的冰箱", "先坏先吃 · 临期置顶"],
+        ["app-misemise-recipes", "MiseMise · 菜谱库", "389 道 · 按食材筛"],
+        ["app-misemise-plan", "MiseMise · 备菜计划", "3 天 6 顿 · 自动扣库存"],
+        ["app-misemise-mix", "MiseMise · 自由搭配", "手上有啥点啥"]
+      ] },
+    { key: "xhs", name: "自己产品的推广图", en: "PROMO GRAPHICS", dir: "xhs/",
+      desc: "NomNom / 奶茶计算器 / MiseMise 三款自研产品的小红书图文",
+      items: [
+        ["xhs-nomnom-cover", "NomNom 官宣 · 点单式记录", ""],
+        ["xhs-nomnom-order", "NomNom · 像点单一样记热量", ""],
+        ["xhs-nomnom-budget", "NomNom · 灵动岛预算", ""],
+        ["xhs-nomnom-calculator", "NomNom · 奶茶热量计算器", ""],
+        ["xhs-nomnom-checkin", "NomNom · 月度打卡", ""],
+        ["xhs-milktea-cover", "奶茶计算器 · 封面", ""],
+        ["xhs-milktea-brands", "奶茶计算器 · 品牌墙", ""],
+        ["xhs-misemise-cover", "MiseMise · 冰箱它都记得", ""],
+        ["xhs-misemise-photo", "MiseMise · 拍照入库", ""],
+        ["xhs-misemise-waste", "MiseMise · 不浪费率", ""]
+      ] },
+    { key: "design", name: "IP 与 logo 设计", en: "LOGO DESIGN", dir: "photo/",
+      desc: "",
+      items: [
+        ["design-logo-1", "IP 形象设计稿 · 一", ""],
+        ["design-logo-2", "IP 形象设计稿 · 二", ""],
+        ["design-logo-3", "IP 形象设计稿 · 三", ""]
+      ] },
+    { key: "video", name: "课程影像", en: "COURSE VIDEO", dir: "video/",
+      desc: "传播学课程作业：光影叙事短片与出镜报道",
+      items: [
+        ["video-film-narrative", "《光影叙事》作业 · 布光设计", "短片帧"],
+        ["video-on-camera-report", "出镜报道作业 · 现场报道", "短片帧"]
+      ] }
+  ];
+  var root = document.getElementById("galRoot");
+  var html = "";
+  GROUPS.forEach(function (g) {
+    html += '<div class="gal-group"><div class="gal-title"><b>' + g.name + '</b>';
+    if (g.en) html += '<span class="en">' + g.en + '</span>';
+    html += '<span class="cnt">' + g.items.length + ' 张</span></div>';
+    if (g.desc) html += '<p style="margin:-10px 0 18px;font-size:13.5px;color:var(--text-2)">' + g.desc + '</p>';
+    html += '<div class="gal-cols">';
+    g.items.forEach(function (it) {
+      html += '<figure class="gal-item"><img loading="lazy" src="' + A + g.dir + it[0] + '.jpg" alt="' + it[1] + '">' +
+              '<figcaption class="gal-cap"><b>' + it[1] + '</b>' + (it[2] || "") + '</figcaption></figure>';
+    });
+    html += '</div></div>';
+  });
+  root.innerHTML = html;
+
+  // v4.5 lightbox：点小图看原图 —— 作品墙的图在小卡里看不清细节，
+  // 招聘方点开大图才能看清主视觉里的字（这是「看作品」和「看缩略图」的差别）。
+  // v4.6 杂志化：←/→ 或键盘翻页、白底图注条、点开有放大动画；点图不关、点空白/× 才关。
+  var lb = document.getElementById("lb");
+  var lbImg = document.getElementById("lbImg");
+  var lbCap = document.getElementById("lbCap");
+  var items = [];
+  var cur = -1;
+  function show(i) {
+    if (!items.length) return;
+    cur = (i + items.length) % items.length;
+    var fig = items[cur];
+    var img = fig.querySelector("img");
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    var cap = fig.querySelector("figcaption");
+    lbCap.innerHTML = cap ? cap.innerHTML : "";
+    lbImg.style.animation = "none";
+    void lbImg.offsetWidth;   // 重启放大动画
+    lbImg.style.animation = "";
+  }
+  root.addEventListener("click", function (e) {
+    var fig = e.target.closest(".gal-item");
+    if (!fig) return;
+    items = [].slice.call(root.querySelectorAll(".gal-item"));
+    show(items.indexOf(fig));
+    lb.classList.add("open");
+    lb.setAttribute("aria-hidden", "false");
+  });
+  function closeLb() {
+    lb.classList.remove("open");
+    lb.setAttribute("aria-hidden", "true");
+    lbImg.src = "";
+    cur = -1;
+  }
+  lb.addEventListener("click", function (e) {
+    if (e.target === lb || e.target.closest(".lb-x")) closeLb();
+  });
+  document.querySelector(".lb-prev").addEventListener("click", function () { show(cur - 1); });
+  document.querySelector(".lb-next").addEventListener("click", function () { show(cur + 1); });
+  document.addEventListener("keydown", function (e) {
+    if (!lb.classList.contains("open")) return;
+    if (e.key === "Escape") closeLb();
+    else if (e.key === "ArrowLeft") show(cur - 1);
+    else if (e.key === "ArrowRight") show(cur + 1);
+  });
+})();
+</script>
+
+<!-- ========== 实习案例详情 ========== -->
+<section class="section" id="cases">
+  <div class="container">
+    <div class="sec-head reveal" data-en="MORE INTERNSHIPS">
+      <span class="tape"></span>
+      <h2>另外四段实习，<span class="hl">展开看</span></h2>
+      <p>会员运营那一整段已经在上面完整展开——这里是其余四段实习的过程与结果。</p>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-kicker">CASE 01 · 内容与私域 → 文案 / 运营能力</div>
+      <h3>萤石（海康威视）私域运营 &amp; 小红书美食账号</h3>
+      <div class="case-period">2026.04 - 2026.06 · 内容策划 × 分发 × 复盘 · 双线并行</div>
+      <div class="case-grid">
+        <div class="case-block">
+          <h4>我的动作</h4>
+          <ul>
+            <li>「萤粉俱乐部」私域运营：小红书 / 企微朋友圈内容策划与分发，粉丝社区日常维护</li>
+            <li>内容投放审核与数据复盘，总结爆款逻辑反哺下一轮选题</li>
+            <li>日均处理用户咨询 15+ 条，策划互动话题活跃社区</li>
+            <li>执行 9 场用户共创活动，沉淀可复用的互动玩法</li>
+          </ul>
+        </div>
+        <div class="case-nums">
+          <div class="case-num"><b>40+</b><span>条短视频 / 海报</span></div>
+          <div class="case-num"><b>15+</b><span>期互动话题</span></div>
+          <div class="case-num"><b>9 场</b><span>用户共创活动</span></div>
+          <div class="case-num"><b>2+</b><span>分发渠道</span></div>
+        </div>
+      </div>
+      <div class="case-skill">能力落点：内容生产 · 用户互动 · 数据复盘 · 平台算法理解 · 私域增长</div>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-kicker">CASE 02 · 内容投放 → 数据 / 文案能力</div>
+      <h3>九阳股份 · 品牌内容投放与选题优化</h3>
+      <div class="case-period">2026.02 - 2026.04 · 品牌运营</div>
+      <div class="case-grid">
+        <div class="case-block">
+          <h4>我的动作</h4>
+          <ul>
+            <li>负责产品内容投放，跟进从选题、成稿到分发上线的完整链路</li>
+            <li>拆解<b>播放 / 完播 / 点击 / 进店</b>四层漏斗指标，找出真正影响转化的环节</li>
+            <li>汇总爆款内容规律，反哺并优化 <b>4 个</b>选题方向</li>
+          </ul>
+        </div>
+        <div class="case-nums">
+          <div class="case-num"><b>50 万+</b><span>内容累计曝光</span></div>
+          <div class="case-num"><b>1 万+</b><span>内容累计互动</span></div>
+          <div class="case-num"><b>4 个</b><span>优化选题方向</span></div>
+          <div class="case-num"><b>4 层</b><span>漏斗指标拆解</span></div>
+        </div>
+      </div>
+      <div class="case-skill">能力落点：内容投放 · 漏斗拆解 · 爆款规律总结 · 选题策略</div>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-kicker">CASE 03 · 账号冷启动 → 内容 / 运营能力</div>
+      <h3>晓怪兽食品 · 视频号从 0 搭建</h3>
+      <div class="case-period">2025.11 - 2026.02 · 新媒体运营</div>
+      <div class="case-grid">
+        <div class="case-block">
+          <h4>我的动作</h4>
+          <ul>
+            <li>从 0 搭建品牌视频号：账号定位、内容排期、拍摄剪辑全流程自己跑</li>
+            <li>围绕工厂直营做<b>人设塑造</b>，用真实产线建立信任感</li>
+            <li>独立完成直播执行与视频号小店售后，从内容端一直管到交易端</li>
+          </ul>
+        </div>
+        <div class="case-nums">
+          <div class="case-num"><b>0 → 1</b><span>账号冷启动</span></div>
+          <div class="case-num"><b>50+</b><span>条视频产出</span></div>
+          <div class="case-num"><b>1200+</b><span>账号涨粉</span></div>
+          <div class="case-num"><b>直播</b><span>执行 + 小店售后</span></div>
+        </div>
+      </div>
+      <div class="case-skill">能力落点：账号定位 · 内容生产 · 人设塑造 · 直播执行 · 电商售后</div>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-kicker">CASE 04 · 店铺经营 → 数据 / 活动能力</div>
+      <h3>杭州星曌文化 · 店铺运营与线下活动</h3>
+      <div class="case-period">2025.05 - 2025.10 · 店铺运营</div>
+      <div class="case-grid">
+        <div class="case-block">
+          <h4>我的动作</h4>
+          <ul>
+            <li>拆解销售数据识别<b>高潜品类</b>，把资源集中到更有希望的方向上</li>
+            <li>参与活动方案设计与素材执行，跟进投放数据并迭代</li>
+            <li>线下活动执行与现场引导，把路过的人变成新增用户</li>
+          </ul>
+        </div>
+        <div class="case-nums">
+          <div class="case-num"><b>1 万+</b><span>线下触达人次</span></div>
+          <div class="case-num"><b>800+</b><span>现场新增用户</span></div>
+          <div class="case-num"><b>15%</b><span>转化率提升</span></div>
+          <div class="case-num"><b>4 段</b><span>实习中的第一段</span></div>
+        </div>
+      </div>
+      <div class="case-skill">能力落点：数据选品 · 活动策划执行 · 线下运营 · 转化优化</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 方法论 ========== -->
+<section class="section sec-yellow" id="method">
+  <div class="container">
+    <div class="sec-head reveal" data-en="METHOD">
+      <span class="tape"></span>
+      <h2>我的做事方法：<span class="hl">五条</span></h2>
+      <p>做运营是这几条，做产品也是这几条。</p>
+    </div>
+    <div class="method-grid">
+      <div class="method-card reveal" style="--mc:#F0A8BC; --mcs:#fff0f5;">
+        <span class="mn">01</span><div class="me">📊</div>
+        <h3>数据驱动</h3><p>用数据理解用户，从调研中发现机会，让每一个决策都有依据。</p>
+      </div>
+      <div class="method-card reveal" style="--mc:#90C8EC; --mcs:#eef7fd;">
+        <span class="mn">02</span><div class="me">🚀</div>
+        <h3>执行落地</h3><p>从创意到落地，用执行保障效果，在大项目中承担关键角色。</p>
+      </div>
+      <div class="method-card reveal" style="--mc:#F5C97B; --mcs:#fdf4e4;">
+        <span class="mn">03</span><div class="me">🔗</div>
+        <h3>内容连接</h3><p>用内容连接用户，用运营实现增长，在多平台验证内容能力。</p>
+      </div>
+      <div class="method-card reveal" style="--mc:#C9B8E8; --mcs:#f3eefb;">
+        <span class="mn">04</span><div class="me">🤝</div>
+        <h3>协同沉淀</h3><p>用协同推进项目，把一次经验变成可复用的标准化流程。</p>
+      </div>
+      <div class="method-card reveal" style="--mc:#80B880; --mcs:#edf6ed;">
+        <span class="mn">05</span><div class="me">🧩</div>
+        <h3>能力互补</h3><p>运营打底，设计、文案、AI、产品各顶一块——一个人能跑完整条链路。</p>
+      </div>
+    </div>
+
+    <div class="contact-band reveal">
+      <h2>六种能力，都愿意为您所用 💌</h2>
+      <p>27 届秋招中：用户运营 / 新媒体运营 / 品牌运营 / 内容与设计 / 产品助理方向都欢迎。<br>李鑫婕 · 2985326788@qq.com · 浙江 杭州 · 可立即到岗</p>
+      <a class="btn btn-pink btn-lg" style="margin-top: 18px;" href="assets/resume-li-xinjie.pdf" download>下载完整简历 ⬇</a>
+      <div><a class="back-home" href="index.html">← 返回主页</a></div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer style="text-align:center; padding: 30px 0 46px; color: var(--text-3); font-size: 12.5px;">
+  © 2026 李鑫婕 · CAPABILITY PORTFOLIO
+</footer>
+
+<script>
+// 移动端导航
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  const open = links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+// 滚动显现
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// v4.6 顶部阅读进度条（细线，粉→蓝）
+(function () {
+  var bar = document.createElement('div');
+  bar.className = 'scroll-progress';
+  document.body.appendChild(bar);
+  var h = document.documentElement;
+  addEventListener('scroll', function () {
+    var p = h.scrollTop / ((h.scrollHeight - h.clientHeight) || 1);
+    bar.style.width = (p * 100).toFixed(2) + '%';
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

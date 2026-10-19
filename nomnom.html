@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>nomnom · 把记热量，变成一件轻松的事</title>
+<meta name="description" content="nomnom 是一本把「记热量」变轻松的小本子：扫条码、拍标签、搜中文都能记；内置品牌奶茶点单算热量；热量环 + 三大营养素一目了然。iOS / Android / 网页版。" />
+<meta name="theme-color" content="#FFF5F9" />
+<link rel="icon" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ========== 顶部导航 ========== -->
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#home">
+      <img src="assets/nomnom-icon.svg" alt="nomnom" />
+      <span class="logo-name">nomnom<small>EAT WELL · TRACK LIGHT</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">🏠 金金的主页</a>
+      <a href="#features">功能</a>
+      <a href="#how">怎么记</a>
+      <a href="#friends">好友链</a>
+      <a href="#faq">常见问题</a>
+      <a class="btn btn-pink nav-cta desktop-only" href="https://8247163c3f384498bbe1af8aea0a0bc3.app.workbuddy.link" target="_blank" rel="noopener">打开网页版 ↗</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- ========== Hero ========== -->
+<section class="hero" id="home">
+  <div class="hero-deco" aria-hidden="true">
+    <span class="float-emoji e1">🍡</span>
+    <span class="float-emoji e2">🥤</span>
+    <span class="float-emoji e3">🍓</span>
+  </div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-kicker">
+          <span class="stamp">NOM<br/>NOM</span>
+          <span class="tag">手帐感 · 热量小本子</span>
+        </div>
+        <h1>把记热量，<br/>变成<span class="hl">一件轻松的事</span></h1>
+        <p class="sub">
+          不焦虑、不打卡羞耻。<b>nomnom</b> 帮你把每一餐、每一杯奶茶、每一次运动轻轻记下来，
+          再还你一个<b>看得懂的热量账</b>。
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-pink btn-lg" href="https://8247163c3f384498bbe1af8aea0a0bc3.app.workbuddy.link" target="_blank" rel="noopener">免费开始记录</a>
+          <a class="btn btn-ghost btn-lg" href="#how">看看怎么记 ↓</a>
+        </div>
+        <p class="hero-note">无需下载 · 网页版即刻开用　|　<b>iPhone &amp; 安卓 App 即将上架</b></p>
+      </div>
+
+      <div class="phone-wrap">
+        <div class="phone-glow" aria-hidden="true"></div>
+        <!-- 手机 mockup -->
+        <div class="phone" aria-hidden="true">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <div class="screen-status">
+              <span>9:41</span>
+              <span class="pill">星期三</span>
+            </div>
+            <div class="screen-body">
+              <div class="screen-hello">
+                <h4>早上好呀 🐰<small>已连续记录 6 天</small></h4>
+                <div class="mini-ava">🍓</div>
+              </div>
+
+              <div class="ring-card">
+                <div class="ring-title">今日剩余热量</div>
+                <svg viewBox="0 0 120 120" width="132" height="132" style="margin: 2px auto; display:block;">
+                  <defs>
+                    <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#F0A8BC"/>
+                      <stop offset="1" stop-color="#90C8EC"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="60" cy="60" r="50" fill="none" stroke="#FFF0F5" stroke-width="13"/>
+                  <circle cx="60" cy="60" r="50" fill="none" stroke="url(#ringGrad)" stroke-width="13"
+                          stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="114"
+                          transform="rotate(-90 60 60)"/>
+                  <text x="60" y="55" text-anchor="middle" font-size="26" font-weight="900" fill="#4A3F45" font-family="'PingFang SC',sans-serif">682</text>
+                  <text x="60" y="73" text-anchor="middle" font-size="10" font-weight="700" fill="#C87890" font-family="'PingFang SC',sans-serif">kcal 还能吃</text>
+                </svg>
+                <div class="ring-meta">预算 <b>1,680</b> · 已记录 <b>998</b></div>
+                <div class="bar-mini"><i></i></div>
+              </div>
+
+              <div class="log-row">
+                <div class="lg-ico bg-green">🥚</div>
+                <div class="lg-tx">
+                  <div class="nm">溏心蛋 + 全麦吐司 <span class="meal">早餐</span></div>
+                  <div class="note">蛋白质 18g · 碳水 24g</div>
+                </div>
+                <div class="kcal">268<small> kcal</small></div>
+              </div>
+              <div class="log-row">
+                <div class="lg-ico bg-blue">🧋</div>
+                <div class="lg-tx">
+                  <div class="nm">伯牙绝弦 <span class="meal">奶茶</span></div>
+                  <div class="note">中杯 · 不另外加糖 · 茉莉初雪</div>
+                </div>
+                <div class="kcal">287<small> kcal</small></div>
+              </div>
+
+              <div class="screen-add">＋ 记一笔</div>
+            </div>
+            <div class="screen-tab">
+              <div class="t on"><span class="i">🏠</span>首页</div>
+              <div class="t"><span class="i">➕</span>记录</div>
+              <div class="t"><span class="i">👥</span>好友</div>
+              <div class="t"><span class="i">👤</span>我的</div>
+            </div>
+          </div>
+        </div>
+        <!-- 浮贴纸 -->
+        <div class="phone-sticker ps-1" aria-hidden="true">
+          <span class="ps-ico">🧋</span>
+          <div class="ps-tx"><div class="t1">奶茶点单算热量</div><div class="t2">杯型 · 温度 · 糖度</div></div>
+        </div>
+        <div class="phone-sticker ps-2" aria-hidden="true">
+          <span class="ps-ico">🔥</span>
+          <div class="ps-tx"><div class="t1">连续打卡 6 天</div><div class="t2">贴纸墙 +1</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 品牌条 ========== -->
+<div class="brand-strip">
+  <div class="container">
+    <p>— NOMNOM 的每一口，都有它的位置 —</p>
+    <div class="brand-tags">
+      <span>🍚 中文食物库</span>
+      <span>🧋 霸王茶姬 · 奈雪 · 瑞幸 · 一点点</span>
+      <span>📱 iOS · Android · Web</span>
+      <span>🏷 手帐贴纸</span>
+      <span>👥 私密好友链</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 功能 ========== -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="sec-head reveal" data-en="FEATURES">
+      <span class="tape"></span>
+      <h2>不只是记数字，是<span class="hl">好好吃饭</span>的每一件小事</h2>
+      <p>从扫条码到贴纸打卡，把记录这件事，做得轻一点、可爱一点。</p>
+    </div>
+    <div class="feature-grid">
+      <div class="f-card reveal">
+        <span class="f-mini-tag">扫 · 拍 · 搜</span>
+        <div class="f-ico bg-pink">🍽</div>
+        <h3>怎么记，都快</h3>
+        <p>扫条码、拍营养标签、搜中文（拼音也行）都能记。拿不准的？App 里一键手动建档，下次直接命中。</p>
+        <span class="f-more">扫码 → 建库 → 越用越顺手</span>
+      </div>
+      <div class="f-card reveal">
+        <span class="f-mini-tag">招牌功能</span>
+        <div class="f-ico bg-blue">🧋</div>
+        <h3>奶茶也敢算了</h3>
+        <p>内置霸王茶姬、奈雪、瑞幸、一点点等品牌库。选好杯型、温度、糖度，这杯多少卡当场就知道。</p>
+        <span class="f-more">点单式算热量，奶茶自由</span>
+      </div>
+      <div class="f-card reveal">
+        <div class="f-ico bg-green">🍩</div>
+        <h3>今天还能吃多少</h3>
+        <p>清爽的热量环一眼看完。蛋白质、脂肪、碳水拆开给你看，不是只丢一个冷冰冰的数字。</p>
+        <span class="f-more">热量 + 三大营养素拆解</span>
+      </div>
+      <div class="f-card reveal">
+        <div class="f-ico bg-gold">🎯</div>
+        <h3>跟着目标慢慢走</h3>
+        <p>减脂、保持、增重，按你的身高体重自动算好每天能吃多少。不让你饿着，也不让你乱吃。</p>
+        <span class="f-more">预算自适应，稳住节奏</span>
+      </div>
+      <div class="f-card reveal">
+        <div class="f-ico bg-pink">🏷</div>
+        <h3>打卡变可爱</h3>
+        <p>连续记录会解锁手帐风贴纸，能拖能放大；还有桌面小组件和每日提醒，陪你把习惯养起来。</p>
+        <span class="f-more">贴纸墙 · 小组件 · 提醒</span>
+      </div>
+      <div class="f-card reveal">
+        <div class="f-ico bg-blue">💙</div>
+        <h3>健康小事全打通</h3>
+        <p>运动消耗、体重同步进苹果健康；安卓已接入 Health Connect。你记的饮食也能写回健康 App，数据不用两边填。</p>
+        <span class="f-more">iOS HealthKit · 安卓 Health Connect</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 三步记录 ========== -->
+<section class="section" id="how" style="padding-top:0;">
+  <div class="container">
+    <div class="steps-bg reveal">
+      <div class="sec-head" style="margin-bottom:48px;" data-en="HOW IT WORKS">
+        <span class="tape"></span>
+        <h2>记录，只要 <span class="hl">三秒</span></h2>
+        <p>吃完顺手一记，不用打开表格，不用算算术。</p>
+      </div>
+      <div class="steps-row">
+        <div class="step step-dash reveal">
+          <span class="s-emoji">🍚</span>
+          <h3>找到它</h3>
+          <p>搜名字、扫条码、拍标签，或从相册截图批量识别——中餐、奶茶、超市货都能找得到。</p>
+        </div>
+        <div class="step step-dash reveal">
+          <span class="s-emoji">🧂</span>
+          <h3>点一下</h3>
+          <p>选克数或份量，热量与营养自动算好。常吃的会出现在「快捷记录」里，下次一点就记。</p>
+        </div>
+        <div class="step reveal">
+          <span class="s-emoji">🌙</span>
+          <h3>安心去吃饭</h3>
+          <p>热量环告诉你还剩多少。一天结束，周回顾把一周吃成什么样，清清楚楚画给你。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 目标模式 ========== -->
+<section class="section" id="goals" style="padding-top:20px;">
+  <div class="container">
+    <div class="sec-head reveal" data-en="GOAL MODES">
+      <span class="tape"></span>
+      <h2>不是「管住嘴」，是<span class="hl">有自己的节奏</span></h2>
+      <p>选一个目标，nomnom 帮你算好每天的总量，剩下的交给习惯。</p>
+    </div>
+    <div class="goal-grid">
+      <div class="goal-card g-pink reveal">
+        <span class="g-emoji">🥗</span>
+        <h3>温和减脂</h3>
+        <p>每天吃得刚刚好，缺口一点点补上。三餐照常吃，不极端、不反弹。</p>
+        <div class="g-stats">
+          <div class="st"><span class="n">-350<small style="font-size:10px;"> kcal/日</small></span><span class="l">建议缺口</span></div>
+          <div class="st"><span class="n">🍚</span><span class="l">三餐不落</span></div>
+        </div>
+      </div>
+      <div class="goal-card g-blue reveal">
+        <span class="g-emoji">🍡</span>
+        <h3>稳稳保持</h3>
+        <p>不胖不瘦刚刚好。预算按消耗自动对齐，周末那顿火锅，心里也有数。</p>
+        <div class="g-stats">
+          <div class="st"><span class="n">±0<small style="font-size:10px;"> kcal/日</small></span><span class="l">维持预算</span></div>
+          <div class="st"><span class="n">🏮</span><span class="l">外食自由</span></div>
+        </div>
+      </div>
+      <div class="goal-card g-green reveal">
+        <span class="g-emoji">💪</span>
+        <h3>健康增重</h3>
+        <p>热量盈余 + 蛋白质盯紧，练后吃够，长的是肌肉不是肚子。</p>
+        <div class="g-stats">
+          <div class="st"><span class="n">+300<small style="font-size:10px;"> kcal/日</small></span><span class="l">建议盈余</span></div>
+          <div class="st"><span class="n">🥚</span><span class="l">蛋白达标</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 好友链 ========== -->
+<section class="section social-sec" id="friends">
+  <div class="container">
+    <div class="social-grid">
+      <div class="social-copy reveal">
+        <span class="tape"></span>
+        <h2>和在意的人，<br/>互相<span class="hl">陪着坚持</span></h2>
+        <p>只属于你们俩的「私密好友链」：连上之后，可以互相看看对方的打卡、饮食和运动——是陪伴，不是比赛。</p>
+        <ul class="social-list">
+          <li>
+            <div class="c-ico">📖</div>
+            <div><b>互看打卡</b><span>今天有没有好好吃饭、有没有动一动，打开就知道。</span></div>
+          </li>
+          <li>
+            <div class="c-ico">🍱</div>
+            <div><b>互看饮食与运动</b><span>对方的每餐、每次运动都看得到，想吃同款？一键也能记。</span></div>
+          </li>
+          <li>
+            <div class="c-ico">🔒</div>
+            <div><b>私密链接，仅你可见</b><span>通过专属链接邀请，不进公开社区，不给第三人看。</span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="friend-cards reveal">
+        <div class="friend-phone">
+          <div class="fp-head">
+            <div class="ava">🐻</div>
+            <div><b>小许同学</b><span>已互相陪伴 21 天</span></div>
+            <span class="f-ok">✓ 好友链</span>
+          </div>
+          <div class="fp-row">
+            <span class="r-emoji">🥣</span>
+            <div class="r-tx"><b>午餐 <i>好友动态</i></b><span>鸡胸杂粮饭 · 蛋白质 41g</span></div>
+            <span class="r-kcal" style="color:#80B880;">532</span>
+          </div>
+          <div class="fp-row">
+            <span class="r-emoji">🏃‍♀️</span>
+            <div class="r-tx"><b>运动 <i>好友动态</i></b><span>晨跑 5.2km · 消耗 302 kcal</span></div>
+            <span class="r-kcal" style="color:#5098C8;">+302</span>
+          </div>
+          <div class="fp-row">
+            <span class="r-emoji">🔥</span>
+            <div class="r-tx"><b>打卡 <i>好友动态</i></b><span>已连续记录 12 天</span></div>
+            <span class="r-kcal" style="color:#C87890;">🔥</span>
+          </div>
+        </div>
+        <div class="fp-mini">
+          <b>🔗 你的专属好友链</b>
+          <span>把链接发给对方，一起坚持</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 下载 ========== -->
+<section class="section dl-sec" id="download">
+  <div class="container">
+    <div class="dl-card-wrap reveal">
+      <div class="dl-head">
+        <img class="dl-logo" src="assets/nomnom-icon.svg" alt="nomnom 图标" />
+        <div>
+          <h2>现在就开始，记下今天的第一餐</h2>
+          <p>网页版即刻可用；手机 App 正在路上，敬请期待。</p>
+        </div>
+      </div>
+      <div class="plat-grid">
+        <div class="plat-card">
+          <div class="plat-ico" style="background:var(--pink-soft);">🍎</div>
+          <h3>iPhone</h3>
+          <span class="st wait">即将上架</span>
+          <p>扫码、桌面小组件、苹果健康联动——iPhone 专属体验正在路上。</p>
+          <span class="store-badge wait"><span><small>在 App Store 获取</small><br/>nomnom · 即将推出</span></span>
+        </div>
+        <div class="plat-card">
+          <div class="plat-ico" style="background:#eef7fd;">🤖</div>
+          <h3>Android</h3>
+          <span class="st wait">正式版筹备中</span>
+          <p>安卓真机版已在测试，已接入 Health Connect 运动健康，同步步数与活动消耗。</p>
+          <span class="store-badge wait"><span><small>在 Google Play 获取</small><br/>nomnom · 即将推出</span></span>
+        </div>
+        <div class="plat-card">
+          <div class="plat-ico" style="background:#edf6ed;">🌐</div>
+          <h3>网页版</h3>
+          <span class="st">立即可用 ✓</span>
+          <p>无需安装，打开浏览器就能记。电脑手机都行，记录与 App 数据互通。</p>
+          <a class="btn btn-pink btn-sm" href="https://8247163c3f384498bbe1af8aea0a0bc3.app.workbuddy.link" target="_blank" rel="noopener">打开网页版 ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="sec-head reveal" data-en="FAQ">
+      <span class="tape"></span>
+      <h2>常常被问到</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>需要注册账号才能用吗？</summary>
+        <div class="faq-a">不用。<b>游客模式</b>打开就能记，数据只存在你本机；登录后可以<b>云端同步</b>，换手机、开网页版都能接着记。</div>
+      </details>
+      <details class="faq-item">
+        <summary>我的数据安全吗？都存在哪里？</summary>
+        <div class="faq-a">游客模式的记录只保存在你自己的设备上，不上传。登录后数据通过加密传输存到云端（Supabase），仅用于你本人在多设备间同步。健康类数据（苹果健康 / Health Connect）<b>只在你主动授权时</b>读写，我们不会上传或转卖。</div>
+      </details>
+      <details class="faq-item">
+        <summary>支持安卓吗？</summary>
+        <div class="faq-a">支持。安卓真机版已经在测试中，并已接入 <b>Health Connect</b>（小米运动健康、华为运动健康等安卓健康数据都能通过它读取步数与活动消耗）。正式版正在筹备上架，等不及的话可以先用网页版。</div>
+      </details>
+      <details class="faq-item">
+        <summary>奶茶的热量是怎么算的？准吗？</summary>
+        <div class="faq-a">奶茶热量基于<b>品牌官方公开的营养信息</b>与常见杯型克重折算。选好杯型、温度、糖度后会按比例换算，同一杯「不另外加糖」和「全糖」算出来就是不一样——给你的是一杯更接近真实的估算，而非拍脑袋的数字。</div>
+      </details>
+      <details class="faq-item">
+        <summary>nomnom 收费吗？</summary>
+        <div class="faq-a">核心的记录、热量环、目标预算、食物库搜索这些基础功能都<b>免费</b>。未来部分个性化的装饰（比如更多贴纸）可能会做成增值内容，但记热量这件事，永远不该被收费卡住。</div>
+      </details>
+      <details class="faq-item">
+        <summary>网页版和手机 App 有什么区别？</summary>
+        <div class="faq-a">记录、食物库、食谱、好友链等核心功能两边一样且数据互通。手机 App 额外有<b>扫码、相机拍标签、桌面小组件、系统健康同步、本地提醒</b>这些依赖系统能力的功能。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="section cta-band" style="padding-top:10px;">
+  <div class="container reveal">
+    <span class="stamp">NOM<br/>NOM</span>
+    <h2>先记下今天的第一餐吧</h2>
+    <p>三秒打开 · 免费使用 · 数据在你手里</p>
+    <div class="hero-cta" style="justify-content:center;">
+      <a class="btn btn-pink btn-lg" href="https://8247163c3f384498bbe1af8aea0a0bc3.app.workbuddy.link" target="_blank" rel="noopener">立即开始记录</a>
+      <a class="btn btn-ghost btn-lg" href="#download">查看平台与上架计划</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ========== Footer ========== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#home">
+          <img src="assets/nomnom-icon.svg" alt="nomnom" />
+          <span class="logo-name">nomnom<small>EAT WELL · TRACK LIGHT</small></span>
+        </a>
+        <p>把记热量，变成一件轻松的事。<br/>温暖、治愈、有秩序，像一本精装的手帐本。</p>
+      </div>
+      <div class="footer-cols">
+        <div class="col">
+          <h4>产品</h4>
+          <a href="#features">功能</a>
+          <a href="#how">怎么记</a>
+          <a href="#goals">目标模式</a>
+          <a href="#friends">私密好友链</a>
+        </div>
+        <div class="col">
+          <h4>获取</h4>
+          <a href="#download">下载与上架</a>
+          <a href="https://8247163c3f384498bbe1af8aea0a0bc3.app.workbuddy.link" target="_blank" rel="noopener">打开网页版</a>
+          <a href="#faq">常见问题</a>
+        </div>
+        <div class="col">
+          <h4>关于</h4>
+          <a href="index.html">🏠 金金的主页</a>
+          <a href="misemise.html">姊妹产品 MiseMise · 冰箱账本</a>
+          <a href="privacy.html">隐私政策</a>
+          <a href="#home">回到顶部 ↑</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 nomnom · 一个想把记热量变可爱的小产品</span>
+      <span>Made with <span class="love">♥</span> 奶白粉 · 天蓝 · 手帐感</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// 移动端导航
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  const open = links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+// 滚动显现
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

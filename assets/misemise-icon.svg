@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+  <defs>
+    <linearGradient id="mmbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9CCBEA"/>
+      <stop offset="1" stop-color="#7FB5DC"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="92" height="92" rx="24" fill="url(#mmbg)"/>
+  <rect x="26" y="18" width="44" height="60" rx="9" fill="#ffffff" opacity="0.96"/>
+  <rect x="26" y="40" width="44" height="3.4" fill="#7FB5DC"/>
+  <circle cx="33" cy="31" r="3.2" fill="#7FB5DC"/>
+  <circle cx="33" cy="52" r="3.2" fill="#7FB5DC"/>
+  <rect x="34" y="48" width="28" height="4" rx="2" fill="#EAF3FB"/>
+  <rect x="34" y="57" width="20" height="4" rx="2" fill="#EAF3FB"/>
+  <circle cx="68" cy="22" r="7" fill="#FBEFF3" opacity="0.9"/>
+  <circle cx="75" cy="30" r="4.5" fill="#FBEFF3" opacity="0.6"/>
+</svg>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MiseMise · 冰箱它都记得</title>
+<meta name="description" content="MiseMise 是一本会提醒你的冰箱账本：像说话一样添食材，先坏先吃；拍照入库、备菜计划直接排出一周三餐、自由搭配凑一顿，还有不浪费周报。与 nomnom 数据互通，网页版即刻可用。" />
+<meta name="theme-color" content="#EAF3FB" />
+<link rel="icon" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ========== 顶部导航 ========== -->
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#home">
+      <img src="assets/misemise-icon.svg" alt="MiseMise" />
+      <span class="logo-name" style="color:var(--blue-deep);">MiseMise<small>FIRST IN · FIRST OUT</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">🏠 金金的主页</a>
+      <a href="#features">功能</a>
+      <a href="#how">怎么用</a>
+      <a href="#screens">界面一览</a>
+      <a href="#faq">常见问题</a>
+      <a class="btn btn-blue nav-cta desktop-only" href="https://misemise-recipes.app.workbuddy.host" target="_blank" rel="noopener">打开网页版 ↗</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- ========== Hero ========== -->
+<section class="hero" id="home">
+  <div class="hero-deco" aria-hidden="true">
+    <span class="float-emoji e1">🧊</span>
+    <span class="float-emoji e2">🍅</span>
+    <span class="float-emoji e3">🥬</span>
+  </div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-kicker">
+          <span class="stamp stamp-blue">MISE<br/>MISE</span>
+          <span class="tag">备菜 · 冰箱账本</span>
+        </div>
+        <h1>冰箱它都记得，<br/><span class="hl">先坏的先吃</span></h1>
+        <p class="sub">
+          买回来的菜总要等到蔫了才想起来？<b>MiseMise</b> 把冰箱变成一本会提醒的账本：
+          像说话一样添食材，临期的排前面、到点推提醒，一顿一顿<b>替你安排着吃完</b>。
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-blue btn-lg" href="https://misemise-recipes.app.workbuddy.host" target="_blank" rel="noopener">打开我的冰箱</a>
+          <a class="btn btn-ghost btn-lg" href="#how">看看怎么用 ↓</a>
+        </div>
+        <p class="hero-note">无需下载 · 网页版即刻开用　|　与 <b>nomnom</b> 数据互通</p>
+      </div>
+
+      <div class="phone-wrap">
+        <div class="phone-glow" aria-hidden="true"></div>
+        <!-- 手机 mockup：冰箱界面 -->
+        <div class="phone" aria-hidden="true">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <div class="screen-status">
+              <span>9:41</span>
+              <span class="pill">我的冰箱</span>
+            </div>
+            <div class="screen-body">
+              <div class="screen-hello">
+                <h4>我的冰箱 🧊<small>14 样食材 · 按「先坏先吃」排</small></h4>
+                <div class="mini-ava" style="background:#EAF3FB;">🍅</div>
+              </div>
+
+              <div class="ring-card" style="border:1.5px dashed rgba(217,120,138,.5);">
+                <div class="ring-title" style="color:#C25B6E;">⏰ 今天就得吃 · 2 样</div>
+                <div class="log-row" style="margin-top:8px;">
+                  <div class="lg-ico bg-green">🥬</div>
+                  <div class="lg-tx">
+                    <div class="nm">菠菜 <span class="meal">已过期</span></div>
+                    <div class="note">厨房纸包好装袋，别洗 · 吃掉 / 扔掉？</div>
+                  </div>
+                  <div class="kcal" style="color:#C25B6E;">今天</div>
+                </div>
+                <div class="log-row">
+                  <div class="lg-ico bg-blue">🥛</div>
+                  <div class="lg-tx">
+                    <div class="nm">牛奶 <span class="meal">剩 1 天</span></div>
+                    <div class="note">开封后尽快喝，别放门架</div>
+                  </div>
+                  <div class="kcal" style="color:#C25B6E;">明天</div>
+                </div>
+              </div>
+
+              <div class="ring-card" style="margin-top:10px;">
+                <div class="ring-title">本周备菜计划 · 3 天 6 顿</div>
+                <div class="log-row" style="margin-top:8px;">
+                  <div class="lg-ico" style="background:#EAF3FB;">🍳</div>
+                  <div class="lg-tx">
+                    <div class="nm">香煎鸡胸配西兰花</div>
+                    <div class="note">顺手吃掉西兰花 · 鸡胸肉</div>
+                  </div>
+                  <div class="kcal">374<small></small></div>
+                </div>
+                <div class="log-row">
+                  <div class="lg-ico" style="background:#FBEFF3;">🍅</div>
+                  <div class="lg-tx">
+                    <div class="nm">番茄鸡蛋汤面</div>
+                    <div class="note">用掉番茄 · 鸡蛋</div>
+                  </div>
+                  <div class="kcal">412<small></small></div>
+                </div>
+              </div>
+
+              <div class="screen-add">＋ 添食材</div>
+            </div>
+            <div class="screen-tab">
+              <div class="t on"><span class="i">🧊</span>冰箱</div>
+              <div class="t"><span class="i">🍳</span>菜谱</div>
+              <div class="t"><span class="i">📅</span>计划</div>
+              <div class="t"><span class="i">👤</span>我的</div>
+            </div>
+          </div>
+        </div>
+        <!-- 浮贴纸 -->
+        <div class="phone-sticker ps-1" aria-hidden="true">
+          <span class="ps-ico" style="background:#EAF3FB;">🗣</span>
+          <div class="ps-tx"><div class="t1">像说话一样添食材</div><div class="t2">苹果150g 半斤菠菜</div></div>
+        </div>
+        <div class="phone-sticker ps-2" aria-hidden="true">
+          <span class="ps-ico" style="background:#EAF3FB;">📸</span>
+          <div class="ps-tx"><div class="t1">拍照入库</div><div class="t2">拍小票 · 拍食材</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 品牌条 ========== -->
+<div class="brand-strip">
+  <div class="container">
+    <p>— 一本会提醒你的冰箱账本 —</p>
+    <div class="brand-tags">
+      <span>🗣 一句话添食材</span>
+      <span>📸 拍照 / 拍小票入库</span>
+      <span>⏰ 临期提醒推送</span>
+      <span>🍱 389 道菜排一周</span>
+      <span>📊 不浪费率周报</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 功能 ========== -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="sec-head reveal" data-en="FEATURES">
+      <span class="tape tape-solid-blue"></span>
+      <h2>不只是记库存，是<span class="hl">把菜吃完</span>的每一件小事</h2>
+      <p>从添食材到排出一周三餐，让「买回来的」都变成「吃进肚子的」。</p>
+    </div>
+    <div class="feature-grid">
+      <div class="f-card reveal">
+        <span class="f-mini-tag">最快入库</span>
+        <div class="f-ico bg-blue">🗣</div>
+        <h3>像说话一样记</h3>
+        <p>「苹果150g 半斤菠菜 两个鸡蛋」——像发消息一样写一句，自动认出食材、拆好克数、标好保质期。</p>
+        <span class="f-more">会拆「半斤」「两个」，不用查单位</span>
+      </div>
+      <div class="f-card reveal">
+        <span class="f-mini-tag">连打字都省</span>
+        <div class="f-ico bg-green">📸</div>
+        <h3>拍照入库</h3>
+        <p>拍一张食材、或直接拍购物小票，AI 认出每一样，确认一下就进冰箱。小票上的品牌货也能认。</p>
+        <span class="f-more">拍食材 / 拍小票两种姿势</span>
+      </div>
+      <div class="f-card reveal">
+        <div class="f-ico bg-pink">⏰</div>
+        <h3>先坏先吃</h3>
+        <p>快过期的自动排到最上面，红色的「今天就得吃」一眼看到；每天早上还会推一条系统通知提醒你。</p>
+        <span class="f-more">临期置顶 · 每日提醒推送</span>
+      </div>
+      <div class="f-card reveal">
+        <div class="f-ico bg-gold">🍱</div>
+        <h3>备菜计划</h3>
+        <p>「打算吃几天？」——389 道家常菜直接把每一顿排出来：优先吃临期的、不重复、还能按热量目标配平。</p>
+        <span class="f-more">排出即扣库存，做完一键打卡</span>
+      </div>
+      <div class="f-card reveal">
+        <div class="f-ico bg-blue">🤲</div>
+        <h3>自由搭配</h3>
+        <p>手上有啥点啥，不用先建菜谱：点几样食材，当场凑出一顿，热量营养立刻算好。</p>
+        <span class="f-more">冰箱优先 · 现凑现算</span>
+      </div>
+      <div class="f-card reveal">
+        <div class="f-ico bg-green">📊</div>
+        <h3>不浪费周报</h3>
+        <p>这周做了几顿、吃掉多少样、扔掉几样——「不浪费率」告诉你：这个家的冰箱，正在被认真吃完。</p>
+        <span class="f-more">做过的饭都有数</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 三步用法 ========== -->
+<section class="section" id="how" style="padding-top:0;">
+  <div class="container">
+    <div class="steps-bg reveal">
+      <div class="sec-head" style="margin-bottom:48px;" data-en="HOW IT WORKS">
+        <span class="tape tape-solid-blue"></span>
+        <h2>入库，只要 <span class="hl">一句话</span></h2>
+        <p>不用翻分类、不用填表单，像跟家人报账一样就行。</p>
+      </div>
+      <div class="steps-row">
+        <div class="step step-dash reveal">
+          <span class="s-emoji">🛒</span>
+          <h3>说一句</h3>
+          <p>买菜回家顺手写：「苹果150g 半斤菠菜 两个鸡蛋」，或者直接拍一张小票。</p>
+        </div>
+        <div class="step step-dash reveal">
+          <span class="s-emoji">🧊</span>
+          <h3>进冰箱</h3>
+          <p>AI 拆好名字和克数，保质期自动算好。冰箱按「先坏先吃」排，临期永远在最上面。</p>
+        </div>
+        <div class="step reveal">
+          <span class="s-emoji">🍽</span>
+          <h3>安排着吃</h3>
+          <p>备菜计划替你把每顿排好，顺手消耗临期；吃完点一下「吃掉」，周报里就不浪费率 +1。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 界面画廊 ========== -->
+<section class="section" id="screens" style="padding-top:20px;">
+  <div class="container">
+    <div class="sec-head reveal" data-en="SCREENS">
+      <span class="tape tape-solid-blue"></span>
+      <h2>长这个样子，<span class="hl">点开看大图</span></h2>
+      <p>全部是网页版的真实界面截图。</p>
+    </div>
+    <div class="shot-grid reveal">
+      <figure class="shot-item">
+        <div class="shot-img"><img loading="lazy" src="assets/works/app/app-misemise-fridge.jpg" alt="我的冰箱 · 先坏先吃"></div>
+        <figcaption class="shot-cap"><span class="dot" style="width:8px;height:8px;border-radius:50%;background:var(--blue-deep);display:inline-block;"></span><b>我的冰箱</b><span>先坏先吃 · 临期置顶</span></figcaption>
+      </figure>
+      <figure class="shot-item">
+        <div class="shot-img"><img loading="lazy" src="assets/works/app/app-misemise-recipes.jpg" alt="菜谱 · 389 道家常菜"></div>
+        <figcaption class="shot-cap"><b>菜谱库</b><span>389 道 · 按食材筛</span></figcaption>
+      </figure>
+      <figure class="shot-item">
+        <div class="shot-img"><img loading="lazy" src="assets/works/app/app-misemise-plan.jpg" alt="备菜计划 · 一周三餐"></div>
+        <figcaption class="shot-cap"><b>备菜计划</b><span>3 天 6 顿 · 自动扣库存</span></figcaption>
+      </figure>
+      <figure class="shot-item">
+        <div class="shot-img"><img loading="lazy" src="assets/works/app/app-misemise-mix.jpg" alt="自由搭配 · 现凑一顿"></div>
+        <figcaption class="shot-cap"><b>自由搭配</b><span>手上有啥点啥</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 和 nomnom 搭档 ========== -->
+<section class="section social-sec" id="duo">
+  <div class="container">
+    <div class="social-grid">
+      <div class="social-copy reveal">
+        <span class="tape tape-solid-blue"></span>
+        <h2>和 nomnom，<br/>一个<span class="hl">管外食一个管家里</span></h2>
+        <p>在外面吃的记进 <b>nomnom</b>，家里做的交给 <b>MiseMise</b>——两边数据互通，账才记得全。</p>
+        <ul class="social-list">
+          <li>
+            <div class="c-ico">🍱</div>
+            <div><b>吃掉自动记饮食</b><span>冰箱里点「吃掉」，nomnom 的饮食记录里同步出现这一餐，不用再记一遍。</span></div>
+          </li>
+          <li>
+            <div class="c-ico">📖</div>
+            <div><b>食谱两边互通</b><span>在 MiseMise 建的家常菜谱，nomnom 里能一键记录「吃了自己做的这道菜」。</span></div>
+          </li>
+          <li>
+            <div class="c-ico">🎯</div>
+            <div><b>按营养目标配平</b><span>nomnom 里设了热量目标，MiseMise 排菜时会自动按它配平，缺口补、超标扣。</span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="friend-cards reveal">
+        <div class="friend-phone">
+          <div class="fp-head">
+            <div class="ava" style="background:#EAF3FB;">🧊</div>
+            <div><b>MiseMise → nomnom</b><span>吃掉同步 · 自动记录</span></div>
+            <span class="f-ok" style="background:rgba(143,194,228,.2);color:var(--blue-deep);">✓ 已打通</span>
+          </div>
+          <div class="fp-row">
+            <span class="r-emoji">🍅</span>
+            <div class="r-tx"><b>冰箱「吃掉」 <i>番茄 200g</i></b><span>自动写进 nomnom · 午餐</span></div>
+            <span class="r-kcal" style="color:#80B880;">36</span>
+          </div>
+          <div class="fp-row">
+            <span class="r-emoji">🍳</span>
+            <div class="r-tx"><b>做了计划里那顿 <i>香煎鸡胸</i></b><span>nomnom 饮食记录 · 已同步</span></div>
+            <span class="r-kcal" style="color:#5098C8;">374</span>
+          </div>
+          <div class="fp-row">
+            <span class="r-emoji">🔥</span>
+            <div class="r-tx"><b>本周不浪费率 <i>92%</i></b><span>吃掉 23 样 · 扔掉 2 样</span></div>
+            <span class="r-kcal" style="color:#C87890;">📊</span>
+          </div>
+        </div>
+        <div class="fp-mini">
+          <b>🔗 同一个账号</b>
+          <span>登录 nomnom 的账号，两边自动接上</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 获取 ========== -->
+<section class="section dl-sec" id="download">
+  <div class="container">
+    <div class="dl-card-wrap reveal">
+      <div class="dl-head">
+        <img class="dl-logo" src="assets/misemise-icon.svg" alt="MiseMise 图标" />
+        <div>
+          <h2>把冰箱交给它，先坏的先吃</h2>
+          <p>网页版即刻可用；手机 App 正在路上。</p>
+        </div>
+      </div>
+      <div class="plat-grid">
+        <div class="plat-card">
+          <div class="plat-ico" style="background:#EAF3FB;">🍎</div>
+          <h3>iPhone</h3>
+          <span class="st wait">即将上架</span>
+          <p>拍小票入库、临期系统推送——iPhone 版正在路上。</p>
+          <span class="store-badge wait"><span><small>在 App Store 获取</small><br/>MiseMise · 即将推出</span></span>
+        </div>
+        <div class="plat-card">
+          <div class="plat-ico" style="background:#eef7fd;">🤖</div>
+          <h3>Android</h3>
+          <span class="st wait">筹备中</span>
+          <p>安卓版已在规划，先用网页版把冰箱管起来。</p>
+          <span class="store-badge wait"><span><small>在 Google Play 获取</small><br/>MiseMise · 即将推出</span></span>
+        </div>
+        <div class="plat-card">
+          <div class="plat-ico" style="background:#edf6ed;">🌐</div>
+          <h3>网页版</h3>
+          <span class="st">立即可用 ✓</span>
+          <p>无需安装，打开浏览器就能管冰箱。与 nomnom 同账号互通。</p>
+          <a class="btn btn-blue btn-sm" href="https://misemise-recipes.app.workbuddy.host" target="_blank" rel="noopener">打开网页版 ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="sec-head reveal" data-en="FAQ">
+      <span class="tape tape-solid-blue"></span>
+      <h2>常常被问到</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>保质期是怎么定的？准吗？</summary>
+        <div class="faq-a">每种食材都带了一份<b>保鲜知识库</b>：冷藏/冷冻/常温的推荐放法、能放几天、以及一条「这样放更久」的小贴士。你改了入库日期，倒计时会跟着变。它是参考，不是判决——真坏没坏，鼻子说了算。</div>
+      </details>
+      <details class="faq-item">
+        <summary>389 道菜谱是怎么来的？</summary>
+        <div class="faq-a">内置了一套<b>家常菜谱库</b>（每道都带热量、宏量营养、主要食材和做法）。备菜计划从里面挑：优先吃你冰箱里临期的、最近三顿不重样、还想吃的热量目标配平。自己的菜谱可以随手建，建好 nomnom 里也能用。</div>
+      </details>
+      <details class="faq-item">
+        <summary>拍照入库能认出什么？</summary>
+        <div class="faq-a">两种姿势：<b>拍食材</b>——一桌子菜拍一张，逐样认；<b>拍小票</b>——超市小票拍一张，逐行认，连品牌包装食品都能认出来。认不出的会标出来让你补一句，不会默默丢掉。</div>
+      </details>
+      <details class="faq-item">
+        <summary>临期提醒是每天都有吗？</summary>
+        <div class="faq-a">每天到点检查一次冰箱：有临期才推，<b>没临期一条都不打扰</b>。提醒时间可以在设置里调。</div>
+      </details>
+      <details class="faq-item">
+        <summary>和 nomnom 是什么关系？要分开注册吗？</summary>
+        <div class="faq-a">同一个账号体系：登录 nomnom 的账号，食谱、营养目标、「吃掉同步」都会自动接上。不登录也能用——游客模式下冰箱数据只存在你自己的设备上。</div>
+      </details>
+      <details class="faq-item">
+        <summary>MiseMise 收费吗？</summary>
+        <div class="faq-a">冰箱记账、临期提醒、备菜计划、周报，这些核心功能全部<b>免费</b>。它的使命是让你少扔菜——扔掉的食物比它值钱多了。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="section cta-band" style="padding-top:10px;">
+  <div class="container reveal">
+    <span class="stamp stamp-blue">MISE<br/>MISE</span>
+    <h2>今天买回来的菜，别让它们等到过期</h2>
+    <p>三秒入库 · 临期提醒 · 排着吃完</p>
+    <div class="hero-cta" style="justify-content:center;">
+      <a class="btn btn-blue btn-lg" href="https://misemise-recipes.app.workbuddy.host" target="_blank" rel="noopener">打开我的冰箱</a>
+      <a class="btn btn-ghost btn-lg" href="nomnom.html">看看搭档 nomnom →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ========== Footer ========== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#home">
+          <img src="assets/misemise-icon.svg" alt="MiseMise" />
+          <span class="logo-name" style="color:var(--blue-deep);">MiseMise<small>FIRST IN · FIRST OUT</small></span>
+        </a>
+        <p>冰箱它都记得，先坏的先吃。<br/>会提醒、会排菜、不浪费。</p>
+      </div>
+      <div class="footer-cols">
+        <div class="col">
+          <h4>产品</h4>
+          <a href="#features">功能</a>
+          <a href="#how">怎么用</a>
+          <a href="#screens">界面一览</a>
+          <a href="#duo">与 nomnom 联动</a>
+        </div>
+        <div class="col">
+          <h4>获取</h4>
+          <a href="#download">下载与上架</a>
+          <a href="https://misemise-recipes.app.workbuddy.host" target="_blank" rel="noopener">打开网页版</a>
+          <a href="#faq">常见问题</a>
+        </div>
+        <div class="col">
+          <h4>关于</h4>
+          <a href="index.html">🏠 金金的主页</a>
+          <a href="nomnom.html">nomnom · 热量小本子</a>
+          <a href="privacy.html">隐私政策</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MiseMise · 一本会提醒你的冰箱账本</span>
+      <span>Made with <span class="love">♥</span> 天蓝 · 奶油白 · 手帐感</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 点开看大图 -->
+<div class="lb" id="lb" aria-hidden="true">
+  <span class="lb-x" aria-hidden="true">×</span>
+  <figure><img id="lbImg" alt="" /><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<script>
+// 移动端导航
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  const open = links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+// 滚动显现
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// lightbox（与 portfolio 同款：点图放大、点空白/× / Esc 关闭）
+(function () {
+  const lb = document.getElementById('lb');
+  const img = document.getElementById('lbImg');
+  const cap = document.getElementById('lbCap');
+  const shots = [].slice.call(document.querySelectorAll('.shot-item'));
+  document.querySelectorAll('.shot-item').forEach(fig => {
+    fig.addEventListener('click', () => {
+      const im = fig.querySelector('img');
+      img.src = im.src; img.alt = im.alt;
+      const c = fig.querySelector('figcaption');
+      cap.innerHTML = c ? c.innerHTML : '';
+      img.style.animation = 'none'; void img.offsetWidth; img.style.animation = '';
+      lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
+    });
+  });
+  function close() { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); }
+  lb.addEventListener('click', (e) => { if (!e.target.closest('figure')) close(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lb.classList.contains('open')) close(); });
+})();
+</script>
+</body>
+</html>
