@@ -1085,6 +1085,91 @@ body { animation: pageIn .55s ease both; }
 .shot-tag.mm { background: rgba(143, 194, 228, 0.18); color: var(--blue-deep); }
 @media (max-width: 900px) { .shot-grid { grid-template-columns: repeat(2, 1fr); } }
 
+/* ===== 爱好展示（手帐拼贴 / 健身 / 徒步 + 探店 / 摄影） ===== */
+.sec-hobby { background: linear-gradient(180deg, rgba(201,184,232,0.09), rgba(143,194,228,0.04)); }
+
+.hobby-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 30px; }
+.hobby-card {
+  background: #fff; border-radius: var(--radius-lg); padding: 30px 28px;
+  box-shadow: var(--shadow-sm); border: 1px solid rgba(232, 148, 173, 0.12);
+  position: relative; transition: transform .22s ease, box-shadow .22s ease;
+}
+.hobby-card:hover { transform: translateY(-6px) rotate(-0.3deg); box-shadow: var(--shadow); }
+.hobby-ico {
+  width: 60px; height: 60px; border-radius: 20px; display: flex; align-items: center; justify-content: center;
+  font-size: 30px; margin-bottom: 16px;
+}
+.hobby-ico.bg-pink { background: var(--pink-soft); }
+.hobby-ico.bg-blue { background: #eef7fd; }
+.hobby-ico.bg-green { background: var(--mint-soft); }
+.hobby-card h3 { font-size: 18px; font-weight: 900; margin-bottom: 2px; }
+.hobby-card h3 small { display: block; font-size: 11px; font-weight: 700; color: var(--text-3); letter-spacing: .08em; margin-top: 3px; }
+.hobby-card p { font-size: 13.5px; color: var(--text-2); line-height: 1.78; margin: 12px 0 16px; }
+.hobby-photos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.hobby-photos .ph { aspect-ratio: 4 / 3; }
+
+/* 图文混排：探店 */
+.hobby-feature {
+  background: #fff; border-radius: var(--radius-lg); padding: 30px;
+  box-shadow: var(--shadow-sm); border: 1px solid var(--line); margin-bottom: 22px;
+}
+.hobby-feature .hf-head { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.hobby-feature .hf-ico { width: 54px; height: 54px; border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 26px; }
+.hobby-feature .hf-ico.bg-pink { background: var(--pink-soft); }
+.hobby-feature .hf-ico.bg-blue { background: #eef7fd; }
+.hobby-feature h3 { font-size: 19px; font-weight: 900; }
+.hobby-feature h3 small { display: block; font-size: 11px; color: var(--text-3); letter-spacing: .08em; margin-top: 2px; }
+
+.tan-row { display: grid; grid-template-columns: 1fr 1.45fr; gap: 26px; align-items: center; }
+.tan-text p { font-size: 14px; color: var(--text-2); line-height: 1.85; }
+.tan-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+.tan-tags span { font-size: 12px; font-weight: 800; color: var(--pink-deep); background: var(--pink-soft); border-radius: 999px; padding: 5px 14px; }
+.tan-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.tan-photos .ph { aspect-ratio: 1 / 1; }
+
+/* 摄影网格 */
+.photo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.photo-grid .ph { aspect-ratio: 1 / 1; }
+.photo-grid .ph.wide { grid-column: span 2; aspect-ratio: 2 / 1; }
+
+/* 照片占位：替换真实照片时，把整块 .ph 换成 <img class="ph" src="..." alt="..."> 即可 */
+.ph {
+  border-radius: 14px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 6px; color: var(--text-3); font-size: 12px; text-align: center; position: relative; overflow: hidden;
+  border: 1px dashed rgba(51,48,44,0.16);
+}
+.ph span { font-size: 26px; opacity: .65; }
+.ph small { font-weight: 800; letter-spacing: .05em; }
+.ph.p-pink   { background: linear-gradient(135deg, var(--pink-soft), #fff); }
+.ph.p-blue   { background: linear-gradient(135deg, #eef7fd, #fff); }
+.ph.p-green  { background: linear-gradient(135deg, var(--mint-soft), #fff); }
+.ph.p-yellow { background: linear-gradient(135deg, var(--yellow-soft), #fff); }
+.ph.p-purple { background: linear-gradient(135deg, var(--purple-soft), #fff); }
+
+.hobby-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 2px; }
+.hobby-tags span { font-size: 11.5px; font-weight: 800; color: var(--text-2); background: var(--bg-deep); border-radius: 999px; padding: 4px 12px; }
+.hobby-note {
+  margin: 30px auto 0; max-width: 720px; text-align: center;
+  font-size: 14.5px; color: var(--text-2); line-height: 1.9;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius-md);
+  padding: 22px 30px; box-shadow: var(--shadow-sm); position: relative;
+}
+.hobby-note::before {
+  content: "✶"; position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  width: 30px; height: 26px; background: var(--pink-soft); color: var(--pink-deep);
+  border-radius: 999px; display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 900; box-shadow: var(--shadow-sm);
+}
+.hobby-note b { color: var(--pink-deep); }
+.ph { transition: transform .2s ease, box-shadow .2s ease; }
+.ph:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+
+@media (max-width: 860px) {
+  .hobby-grid { grid-template-columns: 1fr; }
+  .tan-row { grid-template-columns: 1fr; }
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 </style>
 </head>
 <body>
@@ -1101,6 +1186,7 @@ body { animation: pageIn .55s ease both; }
       <a href="#portfolio">作品集</a>
       <a href="portfolio.html">能力作品集</a>
       <a href="#skills">技能</a>
+      <a href="#hobby">爱好</a>
       <a href="#contact">联系我</a>
       <a href="resume.html">简历</a>
       <a class="btn btn-pink nav-cta desktop-only" href="assets/resume-li-xinjie.pdf" download>下载简历 ⬇</a>
@@ -1417,6 +1503,93 @@ body { animation: pageIn .55s ease both; }
         <p>长期<b>户外运动</b>爱好者——骑行、跑步、徒步都常年保持。长距离骑行磨节奏感，跑步练耐力，徒步培养路线规划；这些「把目标拆成每天一小步」的体感，也带回了运营工作里。</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ========== 爱好展示 ========== -->
+<section class="section sec-hobby" id="hobby">
+  <div class="container">
+    <div class="sec-head reveal" data-en="HOBBIES & LIFE">
+      <span class="tape"></span>
+      <h2>生活里的<span class="hl">另一面</span></h2>
+      <p>认真生活，也是认真做产品的一部分——手帐、健身、徒步，再加探店和摄影，都是我充电的方式。</p>
+    </div>
+
+    <!-- 三主栏目 -->
+    <div class="hobby-grid">
+      <div class="hobby-card reveal">
+        <div class="hobby-ico bg-pink">📒</div>
+        <h3>手帐拼贴<small>JOURNALING</small></h3>
+        <p>从高中开始写手帐，胶带、印章、拼贴是我的解压方式；nomnom 的「手帐贴纸打卡」就是从这里长出来的灵感。</p>
+        <div class="hobby-tags"><span>拼贴</span><span>胶带控</span><span>周计划</span><span>灵感收集</span></div>
+        <div class="hobby-photos">
+          <!-- 替换真实照片：<img class="ph" src="..." alt="手帐拼贴"> -->
+          <div class="ph p-pink"><span>📒</span><small>照片占位</small></div>
+          <div class="ph p-yellow"><span>✂️</span><small>照片占位</small></div>
+        </div>
+      </div>
+
+      <div class="hobby-card reveal">
+        <div class="hobby-ico bg-green">🏃</div>
+        <h3>健身<small>FITNESS</small></h3>
+        <p>规律力量训练 + 有氧，把「每天动一动」做成习惯；也用 nomnom 记训练和饮食，看身体数据一点点的变化。</p>
+        <div class="hobby-tags"><span>力量训练</span><span>有氧</span><span>数据记录</span><span>体态管理</span></div>
+        <div class="hobby-photos">
+          <div class="ph p-green"><span>🏋️</span><small>照片占位</small></div>
+          <div class="ph p-blue"><span>📊</span><small>照片占位</small></div>
+        </div>
+      </div>
+
+      <div class="hobby-card reveal">
+        <div class="hobby-ico bg-blue">🥾</div>
+        <h3>徒步<small>HIKING</small></h3>
+        <p>周末爱往山里跑，杭州周边步道基本走遍了；徒步教会我规划和坚持，跟把一个产品做出来是一个道理。</p>
+        <div class="hobby-tags"><span>杭州周边</span><span>周末出发</span><span>登山</span><span>路线规划</span></div>
+        <div class="hobby-photos">
+          <div class="ph p-blue"><span>⛰️</span><small>照片占位</small></div>
+          <div class="ph p-purple"><span>🌿</span><small>照片占位</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 探店：图文混排 -->
+    <div class="hobby-feature reveal">
+      <div class="hf-head">
+        <div class="hf-ico bg-pink">🍜</div>
+        <h3>探店 · 香香笨笨包源头<small>FOOD EXPLORATION</small></h3>
+      </div>
+      <div class="tan-row">
+        <div class="tan-text">
+          <p>探店是我的内容灵感库，也是「香香笨笨包」的源头——校园周边的面包店、平价正餐，用热量标注做差异化辨识度。边吃边记录，顺手就把一篇笔记的素材攒齐了。</p>
+          <div class="tan-tags">
+            <span>面包店</span><span>平价正餐</span><span>热量测评</span><span>同城探店</span>
+          </div>
+        </div>
+        <div class="tan-photos">
+          <div class="ph p-pink"><span>🥐</span><small>照片占位</small></div>
+          <div class="ph p-yellow"><span>🍜</span><small>照片占位</small></div>
+          <div class="ph p-green"><span>🍰</span><small>照片占位</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 摄影 -->
+    <div class="hobby-feature reveal">
+      <div class="hf-head">
+        <div class="hf-ico bg-blue">📷</div>
+        <h3>摄影 · 随手拍<small>PHOTOGRAPHY</small></h3>
+      </div>
+      <div class="photo-grid">
+        <div class="ph p-blue wide"><span>🌇</span><small>天空 / 街景</small></div>
+        <div class="ph p-pink"><span>🍰</span><small>食物</small></div>
+        <div class="ph p-green"><span>🌿</span><small>自然</small></div>
+        <div class="ph p-yellow"><span>🏠</span><small>日常</small></div>
+        <div class="ph p-purple"><span>🌃</span><small>夜色</small></div>
+        <div class="ph p-pink wide"><span>📕</span><small>手帐 / 静物</small></div>
+      </div>
+    </div>
+
+    <p class="hobby-note">手帐让我学会把零散灵感耐心拼成整体，徒步教会我边走边规划，健身让我习惯把大目标拆成每天的小动作——<b>认真生活，和认真做产品，其实是同一件事。</b></p>
   </div>
 </section>
 
